@@ -92,21 +92,21 @@ Download this code directly or use [git](git-scm.org) (through CLI or a client) 
 
 **The gist;** Add a Google Maps API Key and database connection information to the code.
 
-1. Once you've obtained a Google Maps API Key place add it to the code [here](src/client/src/components/MapContainer.js#245).
+1. Once you've obtained a Google Maps API Key place add it to the code [here](src/client/src/components/MapContainer.js#L248).
 
 ```js
 export default GoogleApiWrapper({
-    apiKey: ("reallllllylongkeyhere")
+    apiKey: ("ENTER_GOOGLE_API_KEY")
 })(MapContainer)
 ```
 
-2. Update the MariaDB connection configuration here.
+2. Update the MariaDB connection configuration [here](src/db.js#L4).
 
 ```js
 const pool = mariadb.createPool({
     host: 'localhost', 
-    user:'root', 
-    password: 'sosafemuchsecure',
+    user:'ENTER_USERNAME_HERE', 
+    password: 'ENTER_PASSWORD_HERE',
     database: 'Places',
     multipleStatements: true,
     connectionLimit: 5
@@ -143,7 +143,7 @@ Navigate to the [src directory](https://github.com/mariadb-corporation/Developer
 
 Once you've pulled down the code and have verified that all of the required Node packages are installed you're ready to run the application! It's as easy as 1,2,3.
 
-1. Using a command line interface (CLI) navigate to where to the `src` directory of Places.
+1. Using a command line interface (CLI) navigate to where to the [src directory](https://github.com/mariadb-corporation/Developer-Examples/blob/master/Places/src/) of Places.
 
 <p align="center">
     <img src="media/cli_root.png" />
