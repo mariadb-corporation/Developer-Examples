@@ -117,7 +117,10 @@ const pool = mariadb.createPool({
 
 Now that you have a copy of the code you're ready to build and run the project. However, before running the code it's important to point out that the application uses several Node Packages.
 
-For the client-side:
+**Client-side**
+
+Navigate to the [client directory](https://github.com/mariadb-corporation/Developer-Examples/tree/master/Places/src/client) and install the following packages:
+
 - [google-maps-react](https://www.npmjs.com/package/google-map-react)
 - [props-type](https://www.npmjs.com/package/props-type)
 - [react](https://www.npmjs.com/package/react)
@@ -126,7 +129,10 @@ For the client-side:
 - [react-modal](https://www.npmjs.com/package/react-modal)
 - [react-scripts](https://www.npmjs.com/package/react-scripts)
 
-For the server-side:
+**Server-side**
+
+Navigate to the [src directory](https://github.com/mariadb-corporation/Developer-Examples/tree/master/Places/src) and install the following packages:
+
 - [body-parser](https://www.npmjs.com/package/body-parser)
 - [concurrently](https://www.npmjs.com/package/concurrently)
 - [express](https://www.npmjs.com/package/express)
