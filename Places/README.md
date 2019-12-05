@@ -17,7 +17,8 @@ This `README` will walk you through the steps for getting this app up and runnin
     1. [Grab the code](#grab-code)
     2. [Build the code](#build-code)
     3. [Run the app](#run-app)
-4. [Support and Contribution](#support-contribution)
+4. [JSON Data Models](#data-models)
+5. [Support and Contribution](#support-contribution)
 
 ## Overview <a name="overview"></a>
 
@@ -160,6 +161,66 @@ npm start
 </p>
 
 3. Open a browser window and navigate to http://localhost:3000.
+
+## JSON Data Models <a name="data-models"></a>
+
+Below are samples of the data model per Location Type. 
+
+**Attraction**
+```json
+{
+   "category":"Landmark",
+   "lastVisitDate":"11/5/2019"
+}
+```
+
+**Location**
+```json
+{
+   "details":{
+      "foodType":"Pizza",
+      "menu":"www.giodanos.com/menu"
+   },
+   "favorites":[
+      {
+         "description":"Classic Chicago",
+         "price":24.99
+      },
+      {
+         "description":"Salad",
+         "price":9.99
+      }
+   ]
+}
+```
+
+**Sports Venue**
+```json
+{
+   "details":{
+      "yearOpened":1994,
+      "capacity":23500
+   },
+   "events":[
+      {
+         "date":"10/18/2019",
+         "description":"Bulls vs Celtics"
+      },
+      {
+         "date":"10/21/2019",
+         "description":"Bulls vs Lakers"
+      },
+      {
+         "date":"11/5/2019",
+         "description":"Bulls vs Bucks"
+      },
+      {
+         "date":"11/5/2019",
+         "description":"Blackhawks vs Blues"
+      }
+   ]
+}
+```
 
 ## Support and Contribution <a name="support-contribution"></a>
 
