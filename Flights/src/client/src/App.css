@@ -1,0 +1,177 @@
+.app {
+  text-align: center;
+}
+
+.app-logo {
+  height: 40vmin;
+}
+
+.app-header {
+  background-color: #003545;
+  min-height: 125px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.title-text {
+  margin: 0px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.sub-title-text {
+  font-size: small;
+}
+
+.form-header {
+  background: #2F99A3;
+  color: white;
+  font-size: 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.form-sub-header {
+  background: #2F99A3;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 8px;
+}
+
+.form-header > p {
+  margin: 0px;
+  padding: 10px;
+}
+
+.form-main {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-main table {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-content {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-section {
+  text-align: left;
+}
+
+.form-section p {
+  margin-bottom: 10px;;
+}
+
+.filter-background {
+  background: #E5E1E5;
+  border-radius: 5px;;
+}
+
+.airport-picker {
+  width: 400px;
+}
+
+button {
+  border-radius: 5px;
+  background: #003545;
+  border-color: #E5E1E5;
+  color: #ffffff;
+  font-weight: bold;
+  width: 350px;
+  height: 50px;
+  font-size: large;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #96DDCF;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.margin-right-150 {
+  margin-right: 150px;
+}
+
+.charts-main {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+}
+
+.charts-title {
+  font-weight: bold;
+  margin: 25px;
+}
+
+.float-right > button {
+  margin-top: 40px;
+}
+
+.form-main > div {
+  margin-top: 25px;
+}
+
+.hidden {
+  display: none;
+}
+
+.select-month {
+  width: 165px;
+  margin-right: 10px;
+}
+
+.select-year {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.select-day { 
+  width: 100px;
+}
+
+.button-search {
+  margin: 20px;
+}
+
+.width-70 {
+  width: 70%;
+}
+
+.image-arrow {
+  width: 50px;
+  height: 50px;
+}
+
+.inline-div-50 {
+  width: 50%;
+  display: inline-block;
+}
+
+.margin-right-35 {
+  margin-right: 35px;
+}
+
+table.table-50 {
+  width: 40%;
+}
