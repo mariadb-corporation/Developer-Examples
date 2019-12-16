@@ -162,7 +162,7 @@ For the server-side:
 
 Once you've pulled down the code and have verified that all of the required Node packages are installed you're ready to run the application! It's as easy as 1,2,3.
 
-1. Using a command line interface (CLI) navigate to where to the `src` directory of Places.
+1. Using a command line interface (CLI) navigate to the `src` directory.
 
 <p align="center">
     <img src="media/cli_root.png" />
