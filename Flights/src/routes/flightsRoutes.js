@@ -4,7 +4,7 @@ let express = require("express"),
     router = express.Router(),
     pool = require('../db');
 
-// GET search 
+// GET - general flight filter
 router.get("/airlines_stats", async (req, res, next) => {
     var origin = req.query.o;
     var dest = req.query.dst;
@@ -55,6 +55,7 @@ router.get("/airlines_stats", async (req, res, next) => {
     }
 });
 
+// GET - breakdown of delays by type for a given airline
 router.get("/airline_delays", async (req, res, next) => {
     var origin = req.query.o;
     var dest = req.query.dst;
@@ -108,6 +109,7 @@ router.get("/airline_delays", async (req, res, next) => {
     }
 });
 
+// GET - breakdown of delays by type for an airline vs average of all airlines
 router.get("/delays_comparison", async (req, res, next) => {
     var origin = req.query.o;
     var dest = req.query.dst;

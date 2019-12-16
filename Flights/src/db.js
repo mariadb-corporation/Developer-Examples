@@ -1,11 +1,12 @@
 var fs = require("fs")
 var mariadb = require('mariadb');
 
+// Configure the database connection
 const pool = mariadb.createPool({
-  host: 'Host_Here', 
-  user:'Username_Here', 
+  host: '<Hostname_Here>', 
+  user:'<Username_Here>', 
   port: 5002,
-  password: "Password_Here",
+  password: "<Password_Here>",
   database: 'flights',
   connectionLimit: 5
 });
