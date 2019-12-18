@@ -11,10 +11,10 @@ This `README` will walk you through the steps for getting this app up and runnin
 # Table of Contents
 1. [Getting started with MariaDB](#overview)
     1. [The Basics](#intro-mariadb)
-    2. [Downloadng and installing MariaDB ColumnStore](#installation)
-    3. [Using the MariaDB columnar database](#mariadb-columnar)
+    2. [Downloading and installing MariaDB ColumnStore](#installation)
 2. [Requirements](#requirements)
 3. [Getting started with the app](#getting-started)
+    1. [Get the data, create the schema, and load the data](#data)
     1. [Grab the code](#grab-code)
     2. [Build the code](#build-code)
     3. [Run the app](#run-app)
@@ -30,74 +30,9 @@ This `README` will walk you through the steps for getting this app up and runnin
     <img src="media/platform.png" />
 </p>
 
-### Downloadng and installing MariaDB ColumnStore <a name="installation"></a>
+### Downloading and installing MariaDB ColumnStore <a name="installation"></a>
 
 [MariaDB ColumnStore](https://mariadb.com/docs/features/mariadb-columnstore/) extends [MariaDB Server](https://mariadb.com/products/) with distributed storage and massively parallel processing to support scalable, high-performance analytics. It can be deployed as the analytics component of MariaDB Platform using MariaDB MaxScale for change-data-capture and hybrid transactional/analytical query routing, or as a standalone columnar database for interactive, ad hoc analytics at scale. You can find more information on how to download and install ColumnStore [here](https://mariadb.com/downloads/#mariadb_platform-mariadb_columnstore).
-
-### Using the MariaDB columnar database <a name="mariadb-columnar"></a>
-
-[MariaDB ColumnStore](https://mariadb.com/docs/features/mariadb-columnstore/) provides distributed, columnar storage for scalable analytical processing. MariaDB ColumnStore is a component of MariaDB Platform. The primary documentation is located in the [MariaDB Public Knowledge Base](https://mariadb.com/kb/en/library/mariadb-columnstore/).
-
-This application uses three a tables (`airlines`, `airports`, `flights`) within a single MariaDB ColumnStore database.
-
-```sql
-CREATE TABLE `airlines` (
-  `iata_code` char(2) DEFAULT NULL,
-  `airline` varchar(30) DEFAULT NULL
-) ENGINE=Columnstore DEFAULT CHARSET=utf8;
-```
-
-```sql
-CREATE TABLE `airports` (
-  `iata_code` char(3) DEFAULT NULL,
-  `airport` varchar(80) DEFAULT NULL,
-  `city` varchar(30) DEFAULT NULL,
-  `state` char(2) DEFAULT NULL,
-  `country` varchar(30) DEFAULT NULL,
-  `latitude` float DEFAULT NULL,
-  `longitude` float DEFAULT NULL
-) ENGINE=Columnstore DEFAULT CHARSET=utf8;
-```
-
-```sql
-CREATE TABLE `flights` (
-  `year` smallint(6) DEFAULT NULL,
-  `month` tinyint(4) DEFAULT NULL,
-  `day` tinyint(4) DEFAULT NULL,
-  `day_of_week` tinyint(4) DEFAULT NULL,
-  `fl_date` date DEFAULT NULL,
-  `carrier` char(2) DEFAULT NULL,
-  `tail_num` char(6) DEFAULT NULL,
-  `fl_num` smallint(6) DEFAULT NULL,
-  `origin` varchar(5) DEFAULT NULL,
-  `dest` varchar(5) DEFAULT NULL,
-  `crs_dep_time` char(4) DEFAULT NULL,
-  `dep_time` char(4) DEFAULT NULL,
-  `dep_delay` smallint(6) DEFAULT NULL,
-  `taxi_out` smallint(6) DEFAULT NULL,
-  `wheels_off` char(4) DEFAULT NULL,
-  `wheels_on` char(4) DEFAULT NULL,
-  `taxi_in` smallint(6) DEFAULT NULL,
-  `crs_arr_time` char(4) DEFAULT NULL,
-  `arr_time` char(4) DEFAULT NULL,
-  `arr_delay` smallint(6) DEFAULT NULL,
-  `cancelled` smallint(6) DEFAULT NULL,
-  `cancellation_code` smallint(6) DEFAULT NULL,
-  `diverted` smallint(6) DEFAULT NULL,
-  `crs_elapsed_time` smallint(6) DEFAULT NULL,
-  `actual_elapsed_time` smallint(6) DEFAULT NULL,
-  `air_time` smallint(6) DEFAULT NULL,
-  `distance` smallint(6) DEFAULT NULL,
-  `carrier_delay` smallint(6) DEFAULT NULL,
-  `weather_delay` smallint(6) DEFAULT NULL,
-  `nas_delay` smallint(6) DEFAULT NULL,
-  `security_delay` smallint(6) DEFAULT NULL,
-  `late_aircraft_delay` smallint(6) DEFAULT NULL
-) ENGINE=Columnstore DEFAULT CHARSET=utf8;
-```
-
-For more information about MariaDB ColumnStore databases please check out the [MariaDB blog](https://mariadb.com/search-results/?q=columnstore)!
-
 
 ## Requirements <a name="requirements"></a>
 
@@ -111,12 +46,15 @@ This project assumes you have familiarity with building web applications using R
 
 ## Getting started <a name="getting-started"></a>
 
-In order to build and run the application you will need to have NodeJS installed. You can find more information [here](https://nodejs.org/).
+### Get the data, create the schema, and load the data <a name="create-schema"></a>
 
-### [Create the schema and load the dataset](https://github.com/mariadb-corporation/mariadb-columnstore-samples/tree/master/flights) <a name="create-schema"></a>
+Instructions on retrieving and importing the flights dataset into a MariaDB ColumnStore database can be [here](https://github.com/mariadb-corporation/mariadb-columnstore-samples/tree/master/flights). Please note that he scripts provided within that repository only targets data for the year 2019 (~7.5 million records). 
 
-This application uses data from the United States Department of Transportation that is imported into a MariaDB ColumnStore database. For instructions on how to retrieve the dataset and import it into a MariaDB ColumnStore database please see the instructions [here](https://github.com/mariadb-corporation/mariadb-columnstore-samples/tree/master/flights) provided by [Todd Stoffel](https://github.com/toddstoffel).
+If you'd like to retrieve data spanning from 1990 to 2019 (~180 million records) please use the following scripts:
 
+* [get_flight_data.sh](/data/get_flight_data.sh)
+* [create_flights_db.sh](/data/create_flights_db.sh) 
+* [load_flights_data.sh](/data/load_flights_data.sh)
 
 ### Grab the code <a name="grab-code"></a>
 
@@ -124,7 +62,7 @@ Download this code directly or use [git](git-scm.org) (through CLI or a client) 
 
 ### Configure the code <a name="configure-code"></a>
 
-Update the MariaDB connection configuration [here](src/db.js).
+Update the MariaDB connection configuration [here](src/db.js) to point to **your** ColumnStore instance of MariaDB.
 
 ```js
 const pool = mariadb.createPool({
@@ -138,6 +76,8 @@ const pool = mariadb.createPool({
 ```
 
 ### Build the code <a name="build-code"></a>
+
+**Important:** In order to build and run the application you will need to have NodeJS installed. You can find more information [here](https://nodejs.org/).
 
 Once you have retrieved a copy of the code you're ready to build and run the project! However, before running the code it's important to point out that the application uses several Node Packages.
 
