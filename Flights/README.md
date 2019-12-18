@@ -46,7 +46,7 @@ This project assumes you have familiarity with building web applications using R
 
 ## Getting started <a name="getting-started"></a>
 
-### Get the data, create the schema, and load the data <a name="create-schema"></a>
+### Get the data, create the schema, and load the data <a name="data"></a>
 
 Instructions on retrieving and importing the flights dataset into a MariaDB ColumnStore database can be [here](https://github.com/mariadb-corporation/mariadb-columnstore-samples/tree/master/flights). Please note that he scripts provided within that repository only targets data for the year 2019 (~7.5 million records). 
 
