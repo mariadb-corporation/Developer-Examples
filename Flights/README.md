@@ -52,9 +52,9 @@ Instructions on retrieving and importing the flights dataset into a MariaDB Colu
 
 If you'd like to retrieve data spanning from 1990 to 2019 (~180 million records) please use the following scripts:
 
-* [get_flight_data.sh](/data/get_flight_data.sh)
-* [create_flights_db.sh](/data/create_flights_db.sh) 
-* [load_flights_data.sh](/data/load_flights_data.sh)
+* [get_flight_data.sh](data/get_flight_data.sh)
+* [create_flights_db.sh](data/create_flights_db.sh) 
+* [load_flights_data.sh](data/load_flights_data.sh)
 
 ### Grab the code <a name="grab-code"></a>
 
