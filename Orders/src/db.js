@@ -1,7 +1,7 @@
 var mariadb = require('mariadb');
 
-var configs = [
-  {
+var pools = [
+  mariadb.createPool({
     host: 'localhost', 
     user:'root', 
     password: 'password',
@@ -9,8 +9,8 @@ var configs = [
     port: 3309,
     multipleStatements: true,
     connectionLimit: 5
-  },
-  {
+  }),
+  mariadb.createPool({
     host: 'localhost', 
     user:'root', 
     password: 'password',
@@ -18,18 +18,13 @@ var configs = [
     port: 3310,
     multipleStatements: true,
     connectionLimit: 5
-  }
+  })
 ];
-
-function getPool(config) {
-  return mariadb.createPool(config);
-}
 
 module.exports={
     getConnection: function(config_id){
-      console.log(config_id);
       return new Promise(function(resolve,reject){
-        getPool(configs[config_id]).getConnection().then(function(connection){
+        pools[config_id].getConnection().then(function(connection){
           resolve(connection);
         }).catch(function(error){
           reject(error);
