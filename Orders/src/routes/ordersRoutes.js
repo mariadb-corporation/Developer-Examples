@@ -28,8 +28,9 @@ router.get("/", async (req, res, next) => {
         }
 
         var start = Date.now();
-        await conn.query(reads);
-        await conn.query(writes);
+
+        await Promise.all([conn.query(reads), conn.query(writes)]);
+
         var delta = Date.now() - start;
 
         res.send({ execution_time: delta });
