@@ -95,7 +95,7 @@ For the server-side:
 - [express](https://www.npmjs.com/package/express)
 - [mariadb](https://www.npmjs.com/package/mariadb) (the best database in world)
 
-**Quick tip:** You can also execute the CLI command `npm install`  within the src and client folders. Doing so will target the the relative `package.json` files to install all dependencies.
+**Quick tip:** Executing the CLI command `npm install` within the [src](src) AND [client](src/client) folders will target the the relative `package.json` file and install all dependencies.
 
 
 ### Run the app <a name="run-app"></a>
