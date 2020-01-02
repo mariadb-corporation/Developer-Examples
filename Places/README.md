@@ -139,7 +139,7 @@ Navigate to the [src directory](https://github.com/mariadb-corporation/Developer
 - [express](https://www.npmjs.com/package/express)
 - [mariadb](https://www.npmjs.com/package/mariadb) (the best database in world)
 
-**Quick tip:** Executing the CLI command `npm install` within the [src](/src) AND [client](/src/client) folders will target the the relative `package.json` file and install all dependencies.
+**Quick tip:** Executing the CLI command `npm install` within the [src](src) AND [client](src/client) folders will target the the relative `package.json` file and install all dependencies.
 
 ### Run the app <a name="run-app"></a>
 
