@@ -109,9 +109,9 @@ export default class Dashboard extends Component {
             <div className="form-main">
                 <div className={this.state.showConnectionOptions ? '' : 'hidden'}>
                     <select onChange={this.onChangeConnectionOption}>
-                        <option value="0">Localhost</option>
-                        <option value="1">Standalone - 4x15</option>
-                        <option value="2">Single Node - 16x60 (2)</option>
+                        <option value="0">Connection 1</option>
+                        <option value="1">Connection 2</option>
+                        <option value="2">Connection 3</option>
                     </select> 
                 </div>
                 <div className="form-content">

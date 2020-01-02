@@ -1,23 +1,48 @@
+const fs = require("fs");
 var mariadb = require('mariadb');
+
+// Place a .pem file within the project root to use this line
+//const serverCert = [fs.readFileSync("skysql_chain.pem", "utf8")];
 
 var pools = [
   mariadb.createPool({
-    host: 'localhost', 
-    user:'root', 
-    password: 'password',
+    host: '<host_address>', 
+    user:'<user>', 
+    password: '<password>',
     database: 'orders',
-    port: 3309,
+    port: 5001,
     multipleStatements: true,
-    connectionLimit: 5
+    connectionLimit: 5,
+    ssl: {
+      //ca: serverCert
+      rejectUnauthorized: false
+    }
   }),
   mariadb.createPool({
-    host: 'localhost', 
-    user:'root', 
-    password: 'password',
+    host: '<host_address>', 
+    user:'<user>', 
+    password: '<password>',
     database: 'orders',
-    port: 3310,
+    port: 5002,
     multipleStatements: true,
-    connectionLimit: 5
+    connectionLimit: 5,
+    ssl: {
+      //ca: serverCert
+      rejectUnauthorized: false
+    }
+  }),
+  mariadb.createPool({
+    host: '<host_address>', 
+    user:'<user>', 
+    password: '<password>',
+    database: 'orders',
+    port: 5003,
+    multipleStatements: true,
+    connectionLimit: 5,
+    ssl: {
+      //ca: serverCert
+      rejectUnauthorized: false
+    }
   })
 ];
 

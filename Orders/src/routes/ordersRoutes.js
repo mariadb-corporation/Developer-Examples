@@ -12,21 +12,24 @@ router.get("/", async (req, res, next) => {
     let conn;
     try {
         conn = await pool.getConnection(connection_id);
-        let query= "";
+
+        let reads = "";
+        let writes = "";
 
         // reads
         for (let i = 0; i < read_count; i++) {
-            query += "select * from orders limit 1;";
+            reads += "select * from orders limit 1;";
         }
 
         // writes
         let transaction_id = Date.now().toString();
         for (let i = 0; i < write_count; i++) {
-            query += "insert into orders (description) values('order - " + transaction_id + "');";
+            writes += "insert into orders (description) values('order - " + transaction_id + "');";
         }
 
         var start = Date.now();
-        await conn.query(query);
+        await conn.query(reads);
+        await conn.query(writes);
         var delta = Date.now() - start;
 
         res.send({ execution_time: delta });
