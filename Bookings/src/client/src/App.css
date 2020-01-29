@@ -1,0 +1,351 @@
+.app {
+  text-align: center;
+}
+
+.app-logo {
+  height: 40vmin;
+}
+
+.app-header {
+  background-color: #003545;
+  min-height: 125px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.title-text {
+  padding-top: 10px;
+  margin: 0px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.sub-title-text {
+  margin: 0px;
+  font-size: small;
+  margin-left: 10px;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.center {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.header-link {
+  background-color: #E5E1E5;
+  color: white;
+  cursor: pointer;
+  height: 65px;
+  display: table;
+}
+
+.header-link h3 { 
+  display:table-cell; 
+  vertical-align:middle
+}
+
+.selected {
+  background-color: #96DDCF;
+}
+
+.form-nav-panel {
+  border-bottom: #c0c0c0 1px solid;
+}
+
+.form-main {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-main table {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-content {
+  padding: 10px;
+}
+
+.form-section {
+  text-align: left;
+}
+
+.filter-content {
+  background: #EEEEEE;
+  border-radius: 5px;
+  text-align: left;
+  padding: 15px;
+}
+
+.filter-content h2 {
+  margin-top: 0px; 
+  margin-left: 5px;
+  color: #003545;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.margin-20 {
+  margin: 20px;
+}
+
+button {
+  border-radius: 5px;
+  background: #003545;
+  border-color: #E5E1E5;
+  color: #ffffff;
+  font-weight: bold;
+  width: 350px;
+  height: 50px;
+  font-size: large;
+}
+
+button:hover {
+  cursor: pointer;
+  background: #96DDCF;
+}
+
+.datepicker {
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+  border: #C0C0C0 1px solid;
+}
+
+.datepicker {
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+  border: #C0C0C0 1px solid;
+}
+
+.width-500 {
+  width: 500px;
+}
+
+.width-125 {
+  width: 125px;
+}
+
+.margin-top-25 {
+  margin-top: 25px;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+
+.width-33 {
+  width: 33%;
+  display: inline-block;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.valign-top {
+  vertical-align: top;
+}
+
+.flight-content button {
+  width: 125px;
+}
+
+.below-0 {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.item-content {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: #C0C0C0 1px solid;
+  padding: 10px;
+}
+
+.item-content table {
+  width: 100%;
+}
+
+.item-content table th {
+  background-color: #003545;
+  color: white;
+  height: 35px;
+  font-weight: normal;
+}
+
+.item-content table td {
+  padding: 15px;
+}
+
+.item-content p.subtext {
+  color: red;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.item-content .header {
+  font-size: 26px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.item-content .sub-header {
+  font-size: 16px;
+  text-align: left;
+}
+
+.score-very-good {
+  color: green;
+}
+
+.score-good {
+  color: lightgreen;
+}
+
+.score-average {
+  color: black;
+}
+
+.score-poor {
+  color: orange;
+}
+
+.score-very-poor {
+  color: red;
+}
+
+.font-size-20 {
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.margin-right-25 {
+  margin-right: 25px;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+
+.forecast-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.forecast-details {
+  margin-top: 5px;
+  font-size: 11px;
+}
+
+.weather-summary-content {
+  background-color: #E5E1E5;
+  padding: 8px;
+  margin: 5px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.margin-left-5 {
+  margin-left: 5px;
+}
+
+.section-label {
+  font-weight: bold;
+  margin: 0px;
+}
+
+.section-description {
+  font-style: italic;
+}
+
+.estimation-content {
+  font-size: 12px;
+  color: red;
+}
+
+.estimation-content p {
+  margin: 0px;
+  font-weight: bold;
+  color: black;
+}
+
+.item-content .trip-content:last-child {
+  margin-top: 25px;
+}
+
+.trip-content table {
+  margin-top: 10px;
+}
+
+.trip-content table tr td {
+  width: 25%;
+}
+
+.trip-score {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  margin-right: 30px;
+  margin-top: 10px;
+}
+
+.trip-score p {
+  color: white;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 38px;
+}
+
+.background-green {
+  background-color: green;
+}
+
+.background-gray {
+  background-color: gray;
+}
+
+.background-red {
+  background-color: red;
+}
+
+#popover-basic.popover {
+  max-width: 500px;
+}
+
