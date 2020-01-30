@@ -1,13 +1,13 @@
-var fs = require("fs")
 var mariadb = require('mariadb');
+require('dotenv').config();
 
-// Configure the database connection
 const pool = mariadb.createPool({
-  host: '<Hostname_Here>', 
-  user:'<Username_Here>', 
-  port: 5002,
-  password: "<Password_Here>",
-  database: 'flights',
+  host: process.env.DB_HOST, 
+  user: process.env.DB_USER, 
+  password: process.env.DB_PASS,
+  port: process.env.DB_PORT,
+  database: process.env.DB_NAME,
+  multipleStatements: true,
   connectionLimit: 5
 });
 
