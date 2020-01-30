@@ -101,17 +101,16 @@ export default GoogleApiWrapper({
 })(MapContainer)
 ```
 
-2. Update the MariaDB connection configuration [here](src/db.js#L4).
+2. Configure the MariaDB connection by [adding an .env file to the Node.js project](https://github.com/mariadb-corporation/mariadb-connector-nodejs/blob/master/documentation/promise-api.md#security-consideration).
 
-```js
-const pool = mariadb.createPool({
-    host: 'localhost', 
-    user:'ENTER_USERNAME_HERE', 
-    password: 'ENTER_PASSWORD_HERE',
-    database: 'Places',
-    multipleStatements: true,
-    connectionLimit: 5
-});
+Example implementation:
+
+```
+DB_HOST=<host_address>
+DB_PORT=<port_number>
+DB_USER=<username>
+DB_PASS=<password>
+DB_NAME=<database>
 ```
 
 ### Build the code <a name="build-code"></a>
