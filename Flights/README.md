@@ -62,17 +62,16 @@ Download this code directly or use [git](git-scm.org) (through CLI or a client) 
 
 ### Configure the code <a name="configure-code"></a>
 
-Update the MariaDB connection configuration [here](src/db.js) to point to **your** ColumnStore instance of MariaDB.
+Configure the MariaDB connection by [adding an .env file to the Node.js project](https://github.com/mariadb-corporation/mariadb-connector-nodejs/blob/master/documentation/promise-api.md#security-consideration).
 
-```js
-const pool = mariadb.createPool({
-    host: '<host_address_here>', 
-    user:'<username_here>', 
-    password: '<password_here>',
-    database: 'flights',
-    multipleStatements: true,
-    connectionLimit: 5
-});
+Example implementation:
+
+```
+DB_HOST=<host_address>
+DB_PORT=<port_number>
+DB_USER=<username>
+DB_PASS=<password>
+DB_NAME=<database>
 ```
 
 ### Build the code <a name="build-code"></a>
