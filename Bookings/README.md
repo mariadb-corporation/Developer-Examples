@@ -69,7 +69,7 @@ Of course, you can also modify the scripts to fit your needs.
 
 Using MariaDB Replication, MariaDB Enterprise Server replicates writes from InnoDB tables to the MariaDB ColumnStore tables, ensuring that the application can perform analytical processing on current data. Combining MariaDB Replication with MariaDB MaxScale configured as a Binlog Server, MariaDB Enterprise Server can host InnoDB and ColumnStore on the same Server.
 
-This application uses replication on a single table called "Flights", which exists in the InnoDB and ColumnStore instances. In order to set up replication add the following to `/etc/my.cnf` for your HTAP instance.
+This application uses replication on a single table called "Flights", which exists in the InnoDB and ColumnStore instances. In order to set up replication add the following to `/etc/maxscale.cnf` for your HTAP instance.
 
 ```
 [replication-filter]
