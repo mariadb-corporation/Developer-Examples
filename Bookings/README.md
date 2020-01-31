@@ -44,7 +44,11 @@ Here's a simple architecture diagram of MariaDB X4 Platform.
     <img src="media/x4.png" />
 </p>
 
-To deploy MariaDB HTAP check out the instructions [here](https://mariadb.com/docs/deploy/htap/).
+For this application we'll be targeting a single instance of MariaDB HTAP, and instructions for setting such an environment can be found here:
+
+https://github.com/mariadb-corporation/mariadb-columnstore-htap
+
+**Note:** You can also find more details on how to deploy MariaDB X4 [here](https://mariadb.com/docs/deploy/htap/).
 
 ### Create the schema <a name="create-schema"></a>
 
