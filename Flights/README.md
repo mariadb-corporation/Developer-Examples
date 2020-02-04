@@ -42,7 +42,9 @@ This application was tested on [macOS Mojave v.10.14.6](https://developer.apple.
 [MariaDB platform](https://mariadb.com/products/mariadb-platform/) unifies [MariaDB TX (transactions)](https://mariadb.com/products/mariadb-platform-transactional/) and [MariaDB AX (analytics)](https://mariadb.com/products/mariadb-platform-analytical/) so transactional applications can retain unlimited historical data and leverage powerful, real-time analytics in order to provide data-driven customers with more information, actionable insight and greater value – and businesses with endless ways to monetize data. It is the enterprise open source database for hybrid transactional/analytical processing at scale.
 
 <p align="center">
-    <img src="media/platform.png" />
+    <kbd>
+        <img src="media/platform.png" />
+    </kbd>
 </p>
 
 ### Downloading and installing MariaDB ColumnStore <a name="installation"></a>
@@ -135,7 +137,9 @@ npm start
 3. Open a browser window and navigate to http://localhost:3000.
 
 <p align="center">
-    <img src="media/get_started.png" />
+    <kbd>
+        <img src="media/get_started.png" />
+    </kbd>
 </p>
 
 ## Support and Contribution <a name="support-contribution"></a>
