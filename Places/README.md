@@ -3,7 +3,9 @@
 **Places** is a web application written in [ReactJS](https://reactjs.org) and [NodeJS](https://nodejs.org) that, backed by the power of the [MariaDB Node Connector](https://github.com/MariaDB/mariadb-connector-nodejs) and [MariaDB platform](https://mariadb.com/products/mariadb-platform/), allows you to record all of your favorite locations!
 
 <p align="center">
-    <img src="media/map.png" style="border: 1px solid #000" />
+    <kbd>
+        <img src="media/map.png" />
+    </kbd>
 </p>
 
 The following will walk you through the steps for getting this application up and running (locally) within minutes! This application is completely open source. Please feel free to use it and the source code as you see fit! 
@@ -40,7 +42,9 @@ This application was tested on [macOS Mojave v.10.14.6](https://developer.apple.
 [MariaDB platform](https://mariadb.com/products/mariadb-platform/) unifies [MariaDB TX (transactions)](https://mariadb.com/products/mariadb-platform-transactional/) and [MariaDB AX (analytics)](https://mariadb.com/products/mariadb-platform-analytical/) so transactional applications can retain unlimited historical data and leverage powerful, real-time analytics in order to provide data-driven customers with more information, actionable insight and greater value – and businesses with endless ways to monetize data. It is the enterprise open source database for hybrid transactional/analytical processing at scale.
 
 <p align="center">
-    <img src="media/platform.png" />
+    <kbd>
+        <img src="media/platform.png" />
+    </kbd>
 </p>
 
 ### Using JSON in a relational database <a name="json-relational"></a>
