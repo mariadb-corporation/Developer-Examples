@@ -3,7 +3,9 @@
 **Bookings** is a web application written in [ReactJS](https://reactjs.org) and [NodeJS](https://nodejs.org) that, backed by the power of the [MariaDB Node Connector](https://github.com/MariaDB/mariadb-connector-nodejs) and the [MariaDB X4 Platform](https://mariadb.com/resources/blog/deploying-mariadb-platform-x4/#smart), unleashes the power of [smart transactions](https://mariadb.com/resources/blog/introducing-mariadb-platform-x4-smart-transactions-and-cloud-native-storage/) on hundreds of millions of records with sub-second query performance without having to add any indexes!
 
 <p align="center" spacing="10">
-    <img src="media/demo.gif" style="border: 1px solid #000" />
+    <kbd>
+        <img src="media/demo.gif" />
+    </kbd>
 </p>
 
 The following will walk you through the steps for getting this application up and running (locally) within minutes! This application is completely open source. Please feel free to use it and the source code as you see fit! 
@@ -44,7 +46,9 @@ This sample was tested on macOS v.10.14.6.
 [MariaDB platform](https://mariadb.com/products/mariadb-platform/) unifies [MariaDB TX (transactions)](https://mariadb.com/products/mariadb-platform-transactional/) and [MariaDB AX (analytics)](https://mariadb.com/products/mariadb-platform-analytical/) so transactional applications can retain unlimited historical data and leverage powerful, real-time analytics in order to provide data-driven customers with more information, actionable insight and greater value – and businesses with endless ways to monetize data. It is the enterprise open source database for hybrid transactional/analytical processing at scale.
 
 <p align="center">
-    <img src="media/platform.png" />
+    <kbd>
+        <img src="media/platform.png" />
+    </kbd>
 </p>
 
 ### Deploying MariaDB Hybrid Transactional-Analytical Processing (HTAP) <a name="installation"></a>
@@ -54,7 +58,9 @@ MariaDB Platform supports [Hybrid Transactional-Analytical Processing (HTAP)](ht
 Here's a simple architecture diagram of MariaDB X4 Platform.
 
 <p align="center" spacing="10">
-    <img src="media/x4.png" style="height:400px;" />
+    <kbd>
+        <img src="media/x4.png" style="height: 300px;" />
+    </kbd>
 </p>
 
 For this application we'll be targeting a single instance of MariaDB HTAP, and instructions for setting such an environment can be found here:
@@ -143,7 +149,9 @@ Once you've pulled down the code and have verified that all of the required Node
 1. Using a command line interface (CLI) navigate to the `src` directory.
 
 <p align="center">
-    <img src="media/cli_root.png" style="border: 1px solid #000" />
+    <kbd>
+        <img src="media/cli_root.png" />
+    </kbd>
 </p>
 
 2. Run the command:
@@ -153,13 +161,17 @@ npm start
 ```
 
 <p align="center">
-    <img src="media/npm_start.png" style="border: 1px solid #000" />
+    <kbd>
+        <img src="media/npm_start.png" />
+    </kbd>
 </p>
 
 3. Open a browser window and navigate to http://localhost:3000.
 
 <p align="center">
-    <img src="media/get_started.png" style="border: 1px solid #000" />
+    <kbd>
+        <img src="media/get_started.png" />
+    </kbd>
 </p>
 
 ## Smart Transactions <a name="smart-transactions"></a>
@@ -173,11 +185,15 @@ At their core, smart transactions are the standard transactions that databases h
 This application uses real-time analytics before a flight is booked. Each flight ticket option contains information calculated from the historical records (average delay, average duration, flight score, etc.) within the `flights` table.
 
 <p align="center">
-    <img src="media/flight_1.png" style="border: 1px solid #000" />
+    <kbd>
+        <img src="media/flight_1.png" />
+    </kbd>
 </p>
 
 <p align="center">
-    <img src="media/flight_2.png" style="border: 1px solid #000" />
+    <kbd>
+        <img src="media/flight_2.png" />
+    </kbd>
 </p>
 
 **Post-transaction**
@@ -185,7 +201,9 @@ This application uses real-time analytics before a flight is booked. Each flight
 This application also uses real-time analytics after a flight has been booked, and a trip has been created. 
 
 <p align="center">
-    <img src="media/trip_1.png" style="border: 1px solid #000" />
+    <kbd>
+        <img src="media/trip_1.png" />
+    </kbd>
 </p>
 
 ## Cross-Engine Queries <a name="cross-engine-queries"></a>
@@ -193,7 +211,9 @@ This application also uses real-time analytics after a flight has been booked, a
 This application uses cross-engine queries to maximize the potentials of the MariaDB X4 Platform. Cross-engine querying is the ability to access, via MaxScale, both the transactional and analytics data within a single query.  
 
 <p align="center">
-    <img src="media/cross_engine.png" style="border: 1px solid #000" />
+    <kbd>
+        <img src="media/cross_engine.png" />
+    </kbd>
 </p>
 
 ## Support and Contribution <a name="support-contribution"></a>
