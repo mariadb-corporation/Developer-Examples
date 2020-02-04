@@ -3,7 +3,9 @@
 **Flights** is a web application written in [ReactJS](https://reactjs.org) and [NodeJS](https://nodejs.org) that, backed by the power of the [MariaDB Node Connector](https://github.com/MariaDB/mariadb-connector-nodejs) and [MariaDB ColumnStore database](https://mariadb.com/docs/features/mariadb-columnstore/), allows you to analyze over 180 million [flight records from the United States Department of Transportation](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time) in real time without needing to add any indexes!
 
 <p align="center" spacing="10">
-    <img src="media/demo.gif" style="border: 1px solid #000" />
+    <kbd>
+        <img src="media/demo.gif" />
+    </kbd>
 </p>
 
 This `README` will walk you through the steps for getting this app up and running (locally) within minutes!
