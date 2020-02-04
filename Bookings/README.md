@@ -3,26 +3,39 @@
 **Bookings** is a web application written in [ReactJS](https://reactjs.org) and [NodeJS](https://nodejs.org) that, backed by the power of the [MariaDB Node Connector](https://github.com/MariaDB/mariadb-connector-nodejs) and the [MariaDB X4 Platform](https://mariadb.com/resources/blog/deploying-mariadb-platform-x4/#smart), unleashes the power of [smart transactions](https://mariadb.com/resources/blog/introducing-mariadb-platform-x4-smart-transactions-and-cloud-native-storage/) on hundreds of millions of records with sub-second query performance without having to add any indexes!
 
 <p align="center" spacing="10">
-    <img src="media/demo.gif" />
+    <img src="media/demo.gif" style="border: 1px solid #000" />
 </p>
 
-This `README` will walk you through the steps for getting this app up and running (locally) within minutes!
+The following will walk you through the steps for getting this application up and running (locally) within minutes! This application is completely open source. Please feel free to use it and the source code as you see fit! 
 
 # Table of Contents
-1. [Getting started with MariaDB and Hybrid Transactional-Analytical Processing](#overview)
+1. [Environment and Compatibility](#compatibility)
+2. [Getting started with MariaDB and Hybrid Transactional-Analytical Processing](#overview)
     1. [The Basics](#intro-mariadb)
     2. [Deploying MariaDB HTAP](#installation)
     3. [Create the schema](#create-schema)
     4. [Load Flight data](#load-data)
     5. [Setting up replication](#replication)
-2. [Requirements to run the app](#requirements)
-3. [Getting started with the app](#getting-started)
+3. [Requirements to run the app](#requirements)
+4. [Getting started with the app](#getting-started)
     1. [Grab the code](#grab-code)
     2. [Build the code](#build-code)
     3. [Run the app](#run-app)
-4. [Smart Transactions](#smart-transactions)
-5. [Cross-Engine Queries](#cross-engine-queries)
-6. [Support and Contribution](#support-contribution)
+5. [Smart Transactions](#smart-transactions)
+6. [Cross-Engine Queries](#cross-engine-queries)
+7. [Support and Contribution](#support-contribution)
+8. [License](#license)
+
+## Environment and Compatibility <a name="compatibility"></a>
+
+This sample was created using the following techologies:
+
+* [MariaDB X4 HTAP (v10.4)](https://github.com/mariadb-corporation/mariadb-columnstore-htap)
+* [React.js (v.16.12.0)](https://github.com/facebook/react/blob/master/CHANGELOG.md#16120-november-14-2019)
+* [Node.js (v.12.x)](https://nodejs.org/docs/latest-v12.x/api/index.html)
+* [NPM (v.6.11.3)](https://docs.npmjs.com/)
+
+This sample was tested on macOS v.10.14.6.
 
 ## Overview <a name="overview"></a>
 
@@ -41,7 +54,7 @@ MariaDB Platform supports [Hybrid Transactional-Analytical Processing (HTAP)](ht
 Here's a simple architecture diagram of MariaDB X4 Platform.
 
 <p align="center" spacing="10">
-    <img src="media/x4.png" />
+    <img src="media/x4.png" style="height:400px;" />
 </p>
 
 For this application we'll be targeting a single instance of MariaDB HTAP, and instructions for setting such an environment can be found here:
@@ -130,7 +143,7 @@ Once you've pulled down the code and have verified that all of the required Node
 1. Using a command line interface (CLI) navigate to the `src` directory.
 
 <p align="center">
-    <img src="media/cli_root.png" />
+    <img src="media/cli_root.png" style="border: 1px solid #000" />
 </p>
 
 2. Run the command:
@@ -140,13 +153,13 @@ npm start
 ```
 
 <p align="center">
-    <img src="media/npm_start.png" />
+    <img src="media/npm_start.png" style="border: 1px solid #000" />
 </p>
 
 3. Open a browser window and navigate to http://localhost:3000.
 
 <p align="center">
-    <img src="media/get_started.png" />
+    <img src="media/get_started.png" style="border: 1px solid #000" />
 </p>
 
 ## Smart Transactions <a name="smart-transactions"></a>
@@ -160,11 +173,11 @@ At their core, smart transactions are the standard transactions that databases h
 This application uses real-time analytics before a flight is booked. Each flight ticket option contains information calculated from the historical records (average delay, average duration, flight score, etc.) within the `flights` table.
 
 <p align="center">
-    <img src="media/flight_1.png" />
+    <img src="media/flight_1.png" style="border: 1px solid #000" />
 </p>
 
 <p align="center">
-    <img src="media/flight_2.png" />
+    <img src="media/flight_2.png" style="border: 1px solid #000" />
 </p>
 
 **Post-transaction**
@@ -172,7 +185,7 @@ This application uses real-time analytics before a flight is booked. Each flight
 This application also uses real-time analytics after a flight has been booked, and a trip has been created. 
 
 <p align="center">
-    <img src="media/trip_1.png" />
+    <img src="media/trip_1.png" style="border: 1px solid #000" />
 </p>
 
 ## Cross-Engine Queries <a name="cross-engine-queries"></a>
@@ -180,7 +193,7 @@ This application also uses real-time analytics after a flight has been booked, a
 This application uses cross-engine queries to maximize the potentials of the MariaDB X4 Platform. Cross-engine querying is the ability to access, via MaxScale, both the transactional and analytics data within a single query.  
 
 <p align="center">
-    <img src="media/cross_engine.png" />
+    <img src="media/cross_engine.png" style="border: 1px solid #000" />
 </p>
 
 ## Support and Contribution <a name="support-contribution"></a>
@@ -188,3 +201,6 @@ This application uses cross-engine queries to maximize the potentials of the Mar
 Thanks so much for taking a look at the Bookings app! As this is a very simple example, there's plenty of potential for customization. Please feel free to submit PR's to the project to include your modifications!
 
 If you have any questions, comments, or would like to contribute to this or future projects like this please reach out to us directly at developers@mariadb.com or on [Twitter](https://twitter.com/mariadb).
+
+## License <a name="license"></a>
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=plastic)](https://opensource.org/licenses/Apache-2.0)

@@ -3,22 +3,35 @@
 **Flights** is a web application written in [ReactJS](https://reactjs.org) and [NodeJS](https://nodejs.org) that, backed by the power of the [MariaDB Node Connector](https://github.com/MariaDB/mariadb-connector-nodejs) and [MariaDB ColumnStore database](https://mariadb.com/docs/features/mariadb-columnstore/), allows you to analyze over 180 million [flight records from the United States Department of Transportation](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time) in real time without needing to add any indexes!
 
 <p align="center" spacing="10">
-    <img src="media/demo.gif" />
+    <img src="media/demo.gif" style="border: 1px solid #000" />
 </p>
 
 This `README` will walk you through the steps for getting this app up and running (locally) within minutes!
 
 # Table of Contents
-1. [Getting started with MariaDB](#overview)
+1. [Environment and Compatibility](#compatibility)
+2. [Getting started with MariaDB](#overview)
     1. [The Basics](#intro-mariadb)
     2. [Downloading and installing MariaDB ColumnStore](#installation)
-2. [Requirements](#requirements)
-3. [Getting started with the app](#getting-started)
+3. [Requirements](#requirements)
+4. [Getting started with the app](#getting-started)
     1. [Get the data, create the schema, and load the data](#data)
     1. [Grab the code](#grab-code)
     2. [Build the code](#build-code)
     3. [Run the app](#run-app)
-4. [Support and Contribution](#support-contribution)
+5. [Support and Contribution](#support-contribution)
+6. [License](#license)
+
+## Environment and Compatibility <a name="compatibility"></a>
+
+This sample was created using the following techologies:
+
+* [MariaDB](https://mariadb.com/products/mariadb-platform/)
+* [React.js (v.16.12.0)](https://github.com/facebook/react/blob/master/CHANGELOG.md#16120-november-14-2019)
+* [Node.js (v.12.x)](https://nodejs.org/docs/latest-v12.x/api/index.html)
+* [NPM (v.6.11.3)](https://docs.npmjs.com/)
+
+This application was tested on [macOS Mojave v.10.14.6](https://developer.apple.com/documentation/macos_release_notes/macos_mojave_10_14_6_release_notes).
 
 ## Overview <a name="overview"></a>
 
@@ -128,3 +141,6 @@ npm start
 Thanks so much for taking a look at the Flights app! As this is a very simple example, there's a lot of potential for customization! 
 
 If you have any questions, comments, or would like to contribute to this or future projects like this please reach out to us directly at developers@mariadb.com or on [Twitter](https://twitter.com/mariadb).
+
+## License  <a name="license"></a>
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=plastic)](https://opensource.org/licenses/Apache-2.0)

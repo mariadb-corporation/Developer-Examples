@@ -3,22 +3,35 @@
 **Places** is a web application written in [ReactJS](https://reactjs.org) and [NodeJS](https://nodejs.org) that, backed by the power of the [MariaDB Node Connector](https://github.com/MariaDB/mariadb-connector-nodejs) and [MariaDB platform](https://mariadb.com/products/mariadb-platform/), allows you to record all of your favorite locations!
 
 <p align="center">
-    <img src="media/map.png" />
+    <img src="media/map.png" style="border: 1px solid #000" />
 </p>
 
-This `README` will walk you through the steps for getting this app up and running (locally) within minutes!
+The following will walk you through the steps for getting this application up and running (locally) within minutes! This application is completely open source. Please feel free to use it and the source code as you see fit! 
 
 # Table of Contents
-1. [Overview](#overview)
+1. [Environment and Compatibility](#compatibility)
+2. [Overview](#overview)
     1. [Introduction to MariaDB](#intro-mariadb)
     2. [Using JSON in a relational database](#json-relational)
-2. [Requirements](#requirements)
-3. [Getting started](#getting-started)
+3. [Requirements](#requirements)
+4. [Getting started](#getting-started)
     1. [Grab the code](#grab-code)
     2. [Build the code](#build-code)
     3. [Run the app](#run-app)
-4. [JSON Data Models](#data-models)
-5. [Support and Contribution](#support-contribution)
+5. [JSON Data Models](#data-models)
+6. [Support and Contribution](#support-contribution)
+7. [License](#license)
+
+## Environment and Compatibility <a name="compatibility"></a>
+
+This application was created using the following techologies:
+
+* [MariaDB](https://mariadb.com/products/mariadb-platform/)
+* [React.js (v.16.11.0)](https://github.com/facebook/react/blob/master/CHANGELOG.md#16110-october-22-2019)
+* [Node.js (v.12.x)](https://nodejs.org/docs/latest-v12.x/api/index.html)
+* [NPM (v.6.11.3)](https://docs.npmjs.com/)
+
+This application was tested on [macOS Mojave v.10.14.6](https://developer.apple.com/documentation/macos_release_notes/macos_mojave_10_14_6_release_notes).
 
 ## Overview <a name="overview"></a>
 
@@ -227,3 +240,6 @@ Below are samples of the data model per Location Type.
 Thanks so much for taking a look at the Places app! As this is a very simple example,there's a lot of potential for customization! 
 
 If you have any questions, comments, or would like to contribute to this or future projects like this please reach out to us directly at developers@mariadb.com or on [Twitter](https://twitter.com/mariadb).
+
+## License  <a name="license"></a>
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=plastic)](https://opensource.org/licenses/Apache-2.0)
