@@ -15,9 +15,11 @@ The following will walk you through the steps for getting this application up an
 2. [Getting started with MariaDB and Hybrid Transactional-Analytical Processing](#overview)
     1. [The Basics](#intro-mariadb)
     2. [Deploying MariaDB HTAP](#installation)
-    3. [Create the schema](#create-schema)
-    4. [Load airport, airline, and flight data](#load-data)
-    5. [Setting up replication](#replication)
+    3. [Clone repo](#clone-repo)
+    3. [Retrieving flight data](#retrieve-data)
+    4. [Create the schema](#create-schema)
+    5. [Load airport, airline, and flight data](#load-data)
+    6. [Setting up replication](#replication)
 3. [Requirements to run the app](#requirements)
 4. [Getting started with the app](#getting-started)
     1. [Grab the code](#grab-code)
@@ -77,11 +79,11 @@ to access the database instance.
 
 **Note:** You can also find more details on how to *manually* deploy MariaDB X4 [here](https://mariadb.com/docs/deploy/htap/).
 
-### Clone repo <a name="retrieve-data"></a>
+### Clone repo <a name="clone-repo"></a>
 
 Next `git clone` this repository to the machine that contains your database instance, and then proceed to the following steps for retrieving flight data, creating schemas, and loading airports/airlines/flight data.
 
-### Retrieving data <a name="retrieve-data"></a>
+### Retrieving flight data <a name="retrieve-data"></a>
 The following script will retrieve the data set by year and month creating CSV data files under the data directory. By default the script will retrieve data for all months from 1990 to 2020. The script can be edited to retrieve smaller or larger data ranges as needed:
 
 ```
