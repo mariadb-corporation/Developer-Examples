@@ -90,7 +90,7 @@ export default class Dashboard extends Component {
                         <h3>Book a Trip!</h3>
                     </div>
                     <div onClick={() => this.toggleSection(1)} className={this.getNavClasses(1)}>
-                        <h3>Upcoming Trips (2)</h3>
+                        <h3>Upcoming Trips</h3>
                     </div>
                     <div style={{clear: "both"}} />
                 </div>

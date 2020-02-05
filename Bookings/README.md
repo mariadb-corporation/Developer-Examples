@@ -25,6 +25,7 @@ The following will walk you through the steps for getting this application up an
     1. [Grab the code](#grab-code)
     2. [Build the code](#build-code)
     3. [Run the app](#run-app)
+    4. [Creating data](#create-data)
 5. [Smart Transactions](#smart-transactions)
 6. [Cross-Engine Queries](#cross-engine-queries)
 7. [Support and Contribution](#support-contribution)
@@ -227,6 +228,14 @@ npm start
         <img src="media/get_started.png" />
     </kbd>
 </p>
+
+### Adding data for the app <a name="create-data"></a>
+
+Upon running the application you will notice that searching for flights and viewin upcoming trips yields no results. This is because there currently no transactional flights, tickets, or trips data. Because this application is merely meant for demonstration purposes only you will need to provide *relevant* data within the following:
+
+* innodb_schema.flights
+* innodb_schema.tickets
+* innodb_schema.trips
 
 ## Smart Transactions <a name="smart-transactions"></a>
 
