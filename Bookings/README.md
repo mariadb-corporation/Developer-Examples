@@ -162,7 +162,7 @@ This project assumes you have familiarity with building web applications using [
 
 The following is required to run this application:
 
-1. [Download and install MariaDB HTAP](https://mariadb.com/docs/deploy/htap/). 
+1. [Download and install MariaDB HTAP](#installation). 
 2. [Download and install NodeJS](https://nodejs.org/en/download/).
 3. git (Optional) - this is required if you would prefer to pull the source code from GitHub repo.
     - Create a [free github account](https://github.com/) if you don’t already have one
