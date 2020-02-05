@@ -100,6 +100,8 @@ function round(value, precision) {
     return Math.round(value * multiplier) / multiplier;
 }
 
+// You can either tie into an existing Weather Forecast API 
+// or provide hard-coded lookups like the following.
 var forecasts = {
     "ORD_2020-02-06": {
         description: "Snow",
