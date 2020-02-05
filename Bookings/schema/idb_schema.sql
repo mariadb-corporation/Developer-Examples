@@ -1,13 +1,13 @@
 use innodb_schema;
 
--- Create syntax for TABLE 'airlines_idb'
+-- Create syntax for TABLE 'airlines'
 CREATE TABLE `airlines` (
   `iata_code` char(2) DEFAULT NULL,
   `airline` varchar(30) DEFAULT NULL,
   UNIQUE KEY `idx_iata_code` (`iata_code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Create syntax for TABLE 'airports_idb'
+-- Create syntax for TABLE 'airports'
 CREATE TABLE `airports` (
   `iata_code` char(3) DEFAULT NULL,
   `airport` varchar(80) DEFAULT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE `airports` (
   `longitude` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Create syntax for TABLE 'flights_idb'
+-- Create syntax for TABLE 'flights'
 CREATE TABLE `flights` (
   `year` smallint(6) DEFAULT NULL,
   `month` tinyint(4) DEFAULT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE `flights` (
   KEY `idx_dep_delay` (`dep_delay`)
 ) ENGINE=InnoDB;
 
--- Create syntax for TABLE 'tickets_idb'
+-- Create syntax for TABLE 'tickets'
 CREATE TABLE `tickets` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `fl_date` date NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE `tickets` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Create syntax for TABLE 'trips_idb'
+-- Create syntax for TABLE 'trips'
 CREATE TABLE `trips` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `ticket_id` int(11) NOT NULL,
