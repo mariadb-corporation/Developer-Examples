@@ -1,20 +1,5 @@
 use columnstore_schema;
 
-create table airlines (
-iata_code char(2),
-airline varchar(30)
-) engine=columnstore default character set=utf8;
-
-create table airports (
-iata_code char(3),
-airport varchar(80),
-city varchar(30),
-state char(2),
-country varchar(30),
-latitude float,
-longitude float
-) engine=columnstore default character set=utf8;
-
 create table flights (
 year smallint,
 month tinyint,
