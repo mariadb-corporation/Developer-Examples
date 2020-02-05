@@ -19,7 +19,7 @@ CREATE TABLE `airports` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'flights_idb'
-CREATE TABLE `flights_idb` (
+CREATE TABLE `flights` (
   `year` smallint(6) DEFAULT NULL,
   `month` tinyint(4) DEFAULT NULL,
   `day` tinyint(4) DEFAULT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `flights_idb` (
 ) ENGINE=InnoDB;
 
 -- Create syntax for TABLE 'tickets_idb'
-CREATE TABLE `tickets_idb` (
+CREATE TABLE `tickets` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `fl_date` date NOT NULL,
   `fl_num` smallint(6) NOT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE `tickets_idb` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'trips_idb'
-CREATE TABLE `trips_idb` (
+CREATE TABLE `trips` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `ticket_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
