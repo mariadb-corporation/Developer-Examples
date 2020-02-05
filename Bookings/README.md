@@ -237,6 +237,31 @@ Upon running the application you will notice that searching for flights and view
 * innodb_schema.tickets
 * innodb_schema.trips
 
+You also have the option of hard-coding your weather forecast information or integrating a Weather Forecast API of your choice. Currently the data is hard-coded, but can facilitate either approach.
+
+Check out [tripRoutes.js](https://github.com/mariadb-corporation/Developer-Examples/blob/master/Bookings/src/routes/tripsRoutes.js#L105-L122) to learn more.
+
+```js
+var forecasts = {
+    "ORD_2020-02-06": {
+        description: "Snow",
+        icon: "snow",
+        temp_low: "28°F",
+        temp_high: "29°F",
+        precip_probability: 0.6,
+        wind_speed: 15
+    },
+    "LAX_2020-02-08": {
+        description: "Clear",
+        icon: "clear-day",
+        temp_low: "56°F",
+        temp_high: "65°F",
+        precip_probability: 0,
+        wind_speed: 5
+    }
+};
+```
+
 ## Smart Transactions <a name="smart-transactions"></a>
 
 At this point you're probably wondering, what are smart transactions?
