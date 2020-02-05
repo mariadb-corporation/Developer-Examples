@@ -172,7 +172,7 @@ The following is required to run this application:
 
 ### Grab the code <a name="grab-code"></a>
 
-Download this code directly or use [git](git-scm.org) (through CLI or a client) to retrieve the code.
+Download this code directly or use [git](http://www.git-scm.org) (through CLI or a client) to retrieve the code.
 
 ### Configure the code <a name="configure-code"></a>
 
