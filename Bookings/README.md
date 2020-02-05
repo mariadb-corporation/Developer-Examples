@@ -16,7 +16,7 @@ The following will walk you through the steps for getting this application up an
     1. [The Basics](#intro-mariadb)
     2. [Deploying MariaDB HTAP](#installation)
     3. [Create the schema](#create-schema)
-    4. [Load Flight data](#load-data)
+    4. [Load airport, airline, and flight data](#load-data)
     5. [Setting up replication](#replication)
 3. [Requirements to run the app](#requirements)
 4. [Getting started with the app](#getting-started)
@@ -67,22 +67,71 @@ For this application we'll be targeting a single instance of MariaDB HTAP, and i
 
 https://github.com/mariadb-corporation/mariadb-columnstore-htap
 
-**Note:** You can also find more details on how to deploy MariaDB X4 [here](https://mariadb.com/docs/deploy/htap/).
+Once you have created your HTAP instance you will be able to create the schemas and load the data. If you have elected to use the method above you simply need to use
+
+``` 
+$ vagrant ssh node1
+```
+
+to access the database instance. 
+
+**Note:** You can also find more details on how to *manually* deploy MariaDB X4 [here](https://mariadb.com/docs/deploy/htap/).
+
+### Clone repo <a name="retrieve-data"></a>
+
+Next `git clone` this repository to the machine that contains your database instance, and then proceed to the following steps for retrieving flight data, creating schemas, and loading airports/airlines/flight data.
+
+### Retrieving data <a name="retrieve-data"></a>
+The following script will retrieve the data set by year and month creating CSV data files under the data directory. By default the script will retrieve data for all months from 1990 to 2020. The script can be edited to retrieve smaller or larger data ranges as needed:
+
+```
+$ ./get_flight_data.sh
+
+2018-011
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   654  100   183  100   471     12     33  0:00:15  0:00:14  0:00:01     0
+100 14.9M  100 14.9M    0     0   415k      0  0:00:36  0:00:36 --:--:--  736k
+Archive:  data.zip
+  inflating: 544122566_.csv
+2018-02
+```
+
+**Note:** The script makes use of curl and unzip which may need to be installed if not already present on your Linux OS.
 
 ### Create the schema <a name="create-schema"></a>
 
-Execute [create.sql](schema/create.sql) within your instance of MariaDB X4.
+The following script will create (and drop if it already exists) the flights database:
+
+```
+$ ./create_flights_db.sh
+```
+
+This includes the following 6 tables within the schema `innodb_schema`:
+
+ * airlines
+ * airports
+ * flights
+ * tickets
+ * trips
+
+ This also includes the following table within the schema `columnstore_schema`:
+
+ * flights
 
 ### Loading Flights data into ColumnStore <a name="load-data"></a>
 
-Instructions on retrieving and importing the flights dataset into a MariaDB ColumnStore database (within HTAP) can be [here](https://github.com/mariadb-corporation/mariadb-columnstore-samples/tree/master/flights). Please note that he scripts provided within that repository only targets data for the year 2019 (~7.5 million records). 
+The airlines and airports table can be populated from the airlines.csv and airports.csv files in the schema directory. Use the following script to do this:
 
-**Note** If you'd like to retrieve data spanning from 1990 to 2020 (~182 million records) please use the following scripts in place of the ones provided [here](https://github.com/mariadb-corporation/mariadb-columnstore-samples/tree/master/flights).
+```
+$ ./load_airports_airlines.sh
+```
 
-* [get_flight_data.sh](data/get_flight_data.sh)
-* [load_flights_data.sh](data/load_flights_data.sh)
+The flights table is populated using a script which will load each CSV file from the data directory into the flights table:
 
-Of course, you can also modify the scripts to fit your needs.
+```
+$ ./load_flight_data.sh
+```
 
 ### Setting up HTAP Replication <a name="htap-replication"></a>
 

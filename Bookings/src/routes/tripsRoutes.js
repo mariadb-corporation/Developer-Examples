@@ -1,12 +1,10 @@
 "use strict";
-
+ 
 let express = require("express"),
     router = express.Router(),
     pool = require('../db');
 
 router.get("/", async (req, res, next) => {
-    let currentDate = new Date();
-    let year = currentDate.getFullYear();
     let conn;
     try {
         conn = await pool.getConnection();
@@ -23,10 +21,10 @@ router.get("/", async (req, res, next) => {
                         fh.delayed_pct, \
                         fh.avg_delay \
                     from \
-                        trips_idb tr inner join  \
-                        tickets_idb t on tr.ticket_id = t.id inner join \
-                        airlines_idb a on t.carrier = a.iata_code, \
-                        (select * from flights_idb where year >= ?) f, \
+                        innodb_schema.trips tr inner join  \
+                        innodb_schema.tickets t on tr.ticket_id = t.id inner join \
+                        innodb_schema.airlines a on t.carrier = a.iata_code, \
+                        (select * from innodb_schema.flights where year >= 2020) f, \
                         (select  \
                             a.avg_delay, \
                             round(100 * (a.`delayed` / a.volume), 2) delayed_pct, \
@@ -44,10 +42,11 @@ router.get("/", async (req, res, next) => {
                                 month, \
                                 day \
                             from  \
-                                flights_cs \
+                                columnstore_schema.flights \
                             where \
-                                month in (select month(fl_date) from trips_idb tr inner join tickets_idb t on tr.ticket_id = t.id) and \
-                                day in (select day(fl_date) from trips_idb tr inner join tickets_idb t on tr.ticket_id = t.id) \
+                                year >= 2014 and \
+                                month in (select month(fl_date) from innodb_schema.trips tr inner join innodb_schema.tickets t on tr.ticket_id = t.id) and \
+                                day in (select day(fl_date) from innodb_schema.trips tr inner join innodb_schema.tickets t on tr.ticket_id = t.id) \
                             group by  \
                                 day, \
                                 month, \
@@ -60,10 +59,11 @@ router.get("/", async (req, res, next) => {
                         fh.month = month(t.fl_date) and \
                         fh.day = day(t.fl_date)";
 
-        var results = await conn.query(query, [year]);
+        var results = await conn.query(query);
         var analyzedResults = analyzeResults(results);
         res.send(analyzedResults);
     } catch (err) {
+        console.log(err);
         throw err;
     } finally {
         if (conn) return conn.release();
@@ -101,7 +101,7 @@ function round(value, precision) {
 }
 
 var forecasts = {
-    "ORD_2020-02-04": {
+    "ORD_2020-02-06": {
         description: "Snow",
         icon: "snow",
         temp_low: "28°F",
@@ -109,7 +109,7 @@ var forecasts = {
         precip_probability: 0.6,
         wind_speed: 15
     },
-    "LAX_2020-02-06": {
+    "LAX_2020-02-08": {
         description: "Clear",
         icon: "clear-day",
         temp_low: "56°F",

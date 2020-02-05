@@ -25,13 +25,13 @@ router.get("/", async (req, res, next) => {
                         f.dep_time, \
                         f.arr_time, \
                         fh.avg_delay, \
-                        (select avg(arr_time - dep_time) from flights_cs \
-                        where month = ? and day = ? and origin = ? and dest = ? and carrier = t.carrier) avg_duration, \
+                        (select avg(arr_time - dep_time) from columnstore_schema.flights \
+                        where month = ? and day = ? and origin = ? and dest = ? and carrier = t.carrier and year >= 2014) avg_duration, \
                         fh.delayed_pct, \
                         fh.cancelled_pct \
                     from \
-                        tickets_idb t, \
-                        (select * from flights_idb where year = ? and month = ? and day = ?) f, \
+                        innodb_schema.tickets t, \
+                        (select * from innodb_schema.flights where year = ? and month = ? and day = ?) f, \
                         (select  \
                             a.avg_delay, \
                             round(100 * (a.`delayed` / a.volume), 2) delayed_pct, \
@@ -45,10 +45,11 @@ router.get("/", async (req, res, next) => {
                                 avg(dep_delay) avg_delay, \
                                 carrier \
                             from  \
-                                flights_cs \
+                                columnstore_schema.flights \
                             where \
+                                year >= 2014 and \
                                 month = ? and day = ? and origin = ? and dest = ? group by carrier) a) fh, \
-                        airlines_idb a  \
+                        innodb_schema.airlines a  \
                     where \
                         t.carrier = f.carrier and \
                         t.fl_date = f.fl_date and \
