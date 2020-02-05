@@ -84,6 +84,9 @@ to access the database instance.
 Next `git clone` this repository to the machine that contains your database instance, and then proceed to the following steps for retrieving flight data, creating schemas, and loading airports/airlines/flight data.
 
 ### Retrieving flight data <a name="retrieve-data"></a>
+
+This application uses flight record data provided by the [Bureau of Transportation](https://www.bts.gov/).
+
 The following script will retrieve the data set by year and month creating CSV data files under the data directory. By default the script will retrieve data for all months from 1990 to 2020. The script can be edited to retrieve smaller or larger data ranges as needed:
 
 ```
@@ -106,7 +109,7 @@ Archive:  data.zip
 The following script will create (and drop if it already exists) the flights database:
 
 ```
-$ ./create_flights_db.sh
+$ ./create_schemas.sh
 ```
 
 This includes the following 6 tables within the schema `innodb_schema`:
