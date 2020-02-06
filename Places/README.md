@@ -130,32 +130,38 @@ DB_PASS=<password>
 DB_NAME=<database>
 ```
 
+The environmental variables from `.env` are used within the [db.js](src/db.js) for the MariaDB Node.js Connector configuration pool settings:
+
+```javascript
+var mariadb = require('mariadb');
+require('dotenv').config();
+
+const pool = mariadb.createPool({
+    host: process.env.DB_HOST, 
+    user: process.env.DB_USER, 
+    password: process.env.DB_PASS,
+    port: process.env.DB_PORT,
+    multipleStatements: true,
+    connectionLimit: 5
+});
+```
+
 ### Build the code <a name="build-code"></a>
 
-Now that you have a copy of the code you're ready to build and run the project. However, before running the code it's important to point out that the application uses several Node Packages.
+Once you have retrieved a copy of the code you're ready to build and run the project! However, before running the code it's important to point out that the application uses several Node Packages.
 
-**Client-side**
+Executing the CLI command 
 
-Navigate to the [client directory](https://github.com/mariadb-corporation/Developer-Examples/tree/master/Places/src/client) and install the following packages:
+```
+npm install
+```
 
-- [google-maps-react](https://www.npmjs.com/package/google-map-react)
-- [props-type](https://www.npmjs.com/package/props-type)
-- [react](https://www.npmjs.com/package/react)
-- [react-datepicker](https://www.npmjs.com/package/react-datepicker)
-- [react-dom](https://www.npmjs.com/package/react-dom)
-- [react-modal](https://www.npmjs.com/package/react-modal)
-- [react-scripts](https://www.npmjs.com/package/react-scripts)
+within  
 
-**Server-side**
+* [src](src): the Node.js project
+* [client](src/client): the React.js project 
 
-Navigate to the [src directory](https://github.com/mariadb-corporation/Developer-Examples/tree/master/Places/src) and install the following packages:
-
-- [body-parser](https://www.npmjs.com/package/body-parser)
-- [concurrently](https://www.npmjs.com/package/concurrently)
-- [express](https://www.npmjs.com/package/express)
-- [mariadb](https://www.npmjs.com/package/mariadb) (the best database in world)
-
-**Quick tip:** Executing the CLI command `npm install` within the [src](src) AND [client](src/client) folders will target the the relative `package.json` file and install all dependencies.
+folders will target the the relative `package.json` file and [install all dependencies](https://docs.npmjs.com/downloading-and-installing-packages-locally).
 
 ### Run the app <a name="run-app"></a>
 

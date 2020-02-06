@@ -188,6 +188,22 @@ DB_PASS=<password>
 DB_NAME=<database>
 ```
 
+The environmental variables from `.env` are used within the [db.js](src/db.js) for the MariaDB Node.js Connector configuration pool settings:
+
+```javascript
+var mariadb = require('mariadb');
+require('dotenv').config();
+
+const pool = mariadb.createPool({
+    host: process.env.DB_HOST, 
+    user: process.env.DB_USER, 
+    password: process.env.DB_PASS,
+    port: process.env.DB_PORT,
+    multipleStatements: true,
+    connectionLimit: 5
+});
+```
+
 ### Build the code <a name="build-code"></a>
 
 Once you have retrieved a copy of the code you're ready to build and run the project! However, before running the code it's important to point out that the application uses several Node Packages.
