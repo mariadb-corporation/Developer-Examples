@@ -231,11 +231,35 @@ npm start
 
 ### Adding data for the app <a name="create-data"></a>
 
+**Upcoming flight data**
+
 Upon running the application you will notice that searching for flights and viewin upcoming trips yields no results. This is because there currently no transactional flights, tickets, or trips data. Because this application is merely meant for demonstration purposes only you will need to provide *relevant* data within the following:
 
 * innodb_schema.flights
 * innodb_schema.tickets
 * innodb_schema.trips
+
+The following are sample datasets for:
+
+An upcoming flight (option) from LAX to ORD on February 5th, 2020.
+
+```sql
+INSERT INTO `flights` (`year`, `month`, `day`, `day_of_week`, `fl_date`, `carrier`, `tail_num`, `fl_num`, `origin`, `dest`, `crs_dep_time`, `dep_time`, `dep_delay`, `taxi_out`, `wheels_off`, `wheels_on`, `taxi_in`, `crs_arr_time`, `arr_time`, `arr_delay`, `cancelled`, `cancellation_code`, `diverted`, `crs_elapsed_time`, `actual_elapsed_time`, `air_time`, `distance`, `carrier_delay`, `weather_delay`, `nas_delay`, `security_delay`, `late_aircraft_delay`) VALUES (2020, 2, 5, 5, '2020-02-05', 'DL', NULL, 1280, 'LAX', 'ORD', '0600', '0600', NULL, NULL, NULL, NULL, NULL, '0913', '0913', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+INSERT INTO `tickets` (`id`, `fl_date`, `fl_num`, `carrier`, `origin`, `dest`, `price`) VALUES (1, '2020-02-05', 1280, 'DL', 'LAX', 'ORD', 240.00);
+```
+
+An upcoming trip from ORD to LAX on February 6th, 2020.
+
+```sql
+INSERT INTO `flights` (`year`, `month`, `day`, `day_of_week`, `fl_date`, `carrier`, `tail_num`, `fl_num`, `origin`, `dest`, `crs_dep_time`, `dep_time`, `dep_delay`, `taxi_out`, `wheels_off`, `wheels_on`, `taxi_in`, `crs_arr_time`, `arr_time`, `arr_delay`, `cancelled`, `cancellation_code`, `diverted`, `crs_elapsed_time`, `actual_elapsed_time`, `air_time`, `distance`, `carrier_delay`, `weather_delay`, `nas_delay`, `security_delay`, `late_aircraft_delay`) VALUES (2020, 2, 6, 2, '2020-02-06', 'DL', NULL, 1170, 'ORD', 'LAX', '1420', '1420', NULL, NULL, NULL, NULL, NULL, '1730', '1730', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+INSERT INTO `tickets` (`id`, `fl_date`, `fl_num`, `carrier`, `origin`, `dest`, `price`) VALUES (2, '2020-02-06', 1170, 'DL', 'ORD', 'LAX', 276.00);
+
+INSERT INTO `trips` (`id`, `ticket_id`) VALUES (1, 4);
+```
+
+**Weather forecast data**
 
 You also have the option of hard-coding your weather forecast information or integrating a Weather Forecast API of your choice. Currently the data is hard-coded, but can facilitate either approach.
 
