@@ -192,7 +192,7 @@ DB_NAME=<database>
 
 Once you have retrieved a copy of the code you're ready to build and run the project! However, before running the code it's important to point out that the application uses several Node Packages.
 
-Executing the CLI command `npm install` within the [src](src) AND [client](src/client) folders will target the the relative `package.json` file and install all dependencies.
+Executing the CLI command `npm install` within the [src](src) (the Node.js project) AND [client](src/client) (the React.js project) folders will target the the relative `package.json` file and install all dependencies.
 
 
 For more information on `npm install` check out the [Official Node.js Documentation](https://docs.npmjs.com/downloading-and-installing-packages-locally).
