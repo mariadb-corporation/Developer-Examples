@@ -1,23 +1,20 @@
 const fs = require("fs");
 var mariadb = require('mariadb');
+require('dotenv').config();
 
-// Place a .pem file within the project root to use this line
+// For SSL connections
 //const serverCert = [fs.readFileSync("skysql_chain.pem", "utf8")];
 
 var pools = [
   mariadb.createPool({
-    host: '<host_address>', 
-    user:'<user>', 
-    password: '<password>',
-    database: 'orders',
-    port: 5001,
+    host: process.env.DB_HOST_1, 
+    user: process.env.DB_USER_1, 
+    password: process.env.DB_PASS_1,
+    port: process.env.DB_PORT_1,
+    database: process.env.DB_NAME_1,
     multipleStatements: true,
-    connectionLimit: 5,
-    ssl: {
-      //ca: serverCert
-      rejectUnauthorized: false
-    }
-  }),
+    connectionLimit: 5
+  })/*,
   mariadb.createPool({
     host: '<host_address>', 
     user:'<user>', 
@@ -27,33 +24,19 @@ var pools = [
     multipleStatements: true,
     connectionLimit: 5,
     ssl: {
-      //ca: serverCert
-      rejectUnauthorized: false
+      ca: serverCert
     }
-  }),
-  mariadb.createPool({
-    host: '<host_address>', 
-    user:'<user>', 
-    password: '<password>',
-    database: 'orders',
-    port: 5003,
-    multipleStatements: true,
-    connectionLimit: 5,
-    ssl: {
-      //ca: serverCert
-      rejectUnauthorized: false
-    }
-  })
+  })*/
 ];
 
 module.exports={
-    getConnection: function(config_id){
-      return new Promise(function(resolve,reject){
-        pools[config_id].getConnection().then(function(connection){
-          resolve(connection);
-        }).catch(function(error){
-          reject(error);
-        });
+  getConnection: function(config_id){
+    return new Promise(function(resolve,reject){
+      pools[config_id].getConnection().then(function(connection){
+        resolve(connection);
+      }).catch(function(error){
+        reject(error);
       });
-    }
-  } 
+    });
+  }
+} 
