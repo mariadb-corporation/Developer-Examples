@@ -1,6 +1,6 @@
 # Places
 
-**Places** is a web application written in [ReactJS](https://reactjs.org) and [NodeJS](https://nodejs.org) that, backed by the power of the [MariaDB Node Connector](https://github.com/MariaDB/mariadb-connector-nodejs) and [MariaDB platform](https://mariadb.com/products/mariadb-platform/), allows you to record all of your favorite locations!
+**Places** is a web application written in [React.js](https://reactjs.org) and [Node.js](https://nodejs.org) that, backed by the power of the [MariaDB Node.js Connector](https://github.com/MariaDB/mariadb-connector-nodejs) and [MariaDB platform](https://mariadb.com/products/mariadb-platform/), allows you to record all of your favorite locations!
 
 <p align="center">
     <kbd>

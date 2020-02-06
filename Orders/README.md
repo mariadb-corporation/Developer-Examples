@@ -1,6 +1,6 @@
 # Orders
 
-**Orders** is a web application written in [React.js](https://reactjs.org) and [Node.js](https://nodejs.org) that, backed by the power of the [MariaDB Node.js Connector](https://github.com/MariaDB/mariadb-connector-nodejs), introduces you to the power, performance, and simplicity of [MariaDB](https://mariadb.com/resources/blog/deploying-mariadb-platform-x4/#smart).
+**Orders** is a web application written in [React.js](https://reactjs.org) and [Node.js](https://nodejs.org) that, backed by the power of the [MariaDB Node.js Connector](https://github.com/MariaDB/mariadb-connector-nodejs), introduces you to the power, performance, and simplicity of [MariaDB](https://mariadb.com/products/).
 
 <p align="center" spacing="10">
     <kbd>
