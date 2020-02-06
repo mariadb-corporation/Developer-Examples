@@ -8,7 +8,7 @@
     </kbd>
 </p>
 
-The following will walk you through the steps for getting this application up and running (locally) within minutes! This application is completely open source. Please feel free to use it and the source code as you see fit! 
+The following will walk you through the steps for getting this application up and running (locally) within minutes! This application is completely open source. Please feel free to use it and the source code as you see fit.
 
 # Table of Contents
 1. [Environment and Compatibility](#compatibility)
