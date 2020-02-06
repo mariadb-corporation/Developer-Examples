@@ -25,7 +25,7 @@ The following will walk you through the steps for getting this application up an
     1. [Grab the code](#grab-code)
     2. [Build the code](#build-code)
     3. [Run the app](#run-app)
-    4. [Creating data](#create-data)
+    4. [Adding app data](#create-data)
 5. [Smart Transactions](#smart-transactions)
 6. [Cross-Engine Queries](#cross-engine-queries)
 7. [Support and Contribution](#support-contribution)
@@ -229,7 +229,7 @@ npm start
     </kbd>
 </p>
 
-### Adding data for the app <a name="create-data"></a>
+### Adding app data <a name="create-data"></a>
 
 **Upcoming flight data**
 
@@ -256,7 +256,7 @@ INSERT INTO `flights` (`year`, `month`, `day`, `day_of_week`, `fl_date`, `carrie
 
 INSERT INTO `tickets` (`id`, `fl_date`, `fl_num`, `carrier`, `origin`, `dest`, `price`) VALUES (2, '2020-02-06', 1170, 'DL', 'ORD', 'LAX', 276.00);
 
-INSERT INTO `trips` (`id`, `ticket_id`) VALUES (1, 4);
+INSERT INTO `trips` (`id`, `ticket_id`) VALUES (1, 2);
 ```
 
 **Weather forecast data**
