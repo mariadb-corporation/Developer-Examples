@@ -3,6 +3,6 @@
 SCHEMA_DIR=$(readlink -f ./schema)
 
 # create innodbtables: airports, airlines
-/usr/bin/mysql --defaults-file=/etc/my.cnf -u root -vvv < $SCHEMA_DIR/idb_schema.sql
+/usr/bin/mysql -udba -pDemo_password1 -h10.10.10.10 -vvv < $SCHEMA_DIR/idb_schema.sql
 # create columnstore table: flights
-/usr/bin/mysql --defaults-file=/etc/my.cnf -u root -vvv < $SCHEMA_DIR/cs_schema.sql
+/usr/bin/mysql -udba -pDemo_password1 -h10.10.10.10 -vvv < $SCHEMA_DIR/cs_schema.sql
