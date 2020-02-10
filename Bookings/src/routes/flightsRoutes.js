@@ -11,6 +11,10 @@ router.get("/", async (req, res, next) => {
     let year = date.getFullYear();
     let month = date.getMonth() + 1;
     let day = date.getDate();
+
+    // ignore time offsets
+    let formattedDate = formatDate(year,month,day);
+
     let conn;
     try {
         conn = await pool.getConnection();
@@ -60,7 +64,7 @@ router.get("/", async (req, res, next) => {
                         t.origin = ? and \
                         t.dest = ?";
 
-        var results = await conn.query(query, [month,day,origin,dest,year,month,day,month,day,origin,dest,date,origin,dest]);
+        var results = await conn.query(query, [month,day,origin,dest,year,month,day,month,day,origin,dest,formattedDate,origin,dest]);
 
         if (results.length > 0) {
             var analyzedResults = analyzeResults(results);
@@ -76,6 +80,15 @@ router.get("/", async (req, res, next) => {
         if (conn) return conn.release();
     }
 });
+
+function formatDate(year,month,day) {
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+    return [year, month, day].join('-');
+}
 
 // secret (scoring) sauce
 function analyzeResults(items) {
