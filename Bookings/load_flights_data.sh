@@ -11,5 +11,5 @@ fi
 # the advantage of this being runnable as a regular user with a root installation.
 for f in $DATA_DIR/$filematch.csv; do
   echo $f
-  /usr/bin/cpimport -m2 -s ',' -E '"' flights flights -l $f
+  /usr/bin/cpimport -m2 -s ',' -E '"' columnstore_schema flights -l $f
 done
