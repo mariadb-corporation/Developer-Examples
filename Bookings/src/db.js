@@ -8,12 +8,12 @@ const pool = mariadb.createPool({
     password: process.env.DB_PASS,
     port: process.env.DB_PORT,
     multipleStatements: true,
-    connectionLimit: 5,
-    timezone: 'UTC',
+    connectionLimit: 5
+    /*timezone: 'UTC',
     dateStrings: [
       'DATE',
       'DATETIME'
-    ]
+    ]*/
 });
 
 

@@ -60,8 +60,14 @@ router.get("/", async (req, res, next) => {
                         fh.day = day(t.fl_date)";
 
         var results = await conn.query(query);
-        var analyzedResults = analyzeResults(results);
-        res.send(analyzedResults);
+
+        if (results.length > 0) {
+            var analyzedResults = analyzeResults(results);
+            res.send(analyzedResults);
+        }
+        else {
+            res.send(results);
+        }
     } catch (err) {
         console.log(err);
         throw err;
@@ -74,7 +80,7 @@ router.get("/", async (req, res, next) => {
 function analyzeResults(items) {
     items.forEach(item => { 
         let forecast = forecasts[item.origin + "_" + item.fl_date];
-
+        
         // Catch all in case the forecast hasn't been updated
         if (forecast === undefined) {
             forecast = {
@@ -116,19 +122,19 @@ function round(value, precision) {
 // You can either tie into an existing Weather Forecast API 
 // or provide hard-coded lookups like the following.
 var forecasts = {
-    "ORD_2020-02-09": {
+    "ORD_2020-02-27": {
         description: "Snow",
         icon: "snow",
-        temp_low: "28°F",
-        temp_high: "29°F",
-        precip_probability: 0.6,
+        temp_low: "-2°C",
+        temp_high: "-1°C",
+        precip_probability: .6,
         wind_speed: 15
     },
-    "LAX_2020-02-11": {
+    "LAX_2020-02-28": {
         description: "Clear",
         icon: "clear-day",
-        temp_low: "56°F",
-        temp_high: "65°F",
+        temp_low: "13°C",
+        temp_high: "15°C",
         precip_probability: 0,
         wind_speed: 5
     }

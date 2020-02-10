@@ -14,6 +14,7 @@ router.get("/", async (req, res, next) => {
 
     // ignore time offsets
     let formattedDate = formatDate(year,month,day);
+    //let formattedDate = date;
 
     let conn;
     try {
@@ -63,7 +64,7 @@ router.get("/", async (req, res, next) => {
                         t.fl_date = ? and \
                         t.origin = ? and \
                         t.dest = ?";
-
+ 
         var results = await conn.query(query, [month,day,origin,dest,year,month,day,month,day,origin,dest,formattedDate,origin,dest]);
 
         if (results.length > 0) {
