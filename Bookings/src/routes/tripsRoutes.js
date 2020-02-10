@@ -73,7 +73,20 @@ router.get("/", async (req, res, next) => {
 // secret (scoring) sauce
 function analyzeResults(items) {
     items.forEach(item => { 
-        let forecast = forecasts[item.origin + "_" + item.fl_date.toISOString().substring(0, 10)];
+        let forecast = forecasts[item.origin + "_" + item.fl_date];
+
+        // Catch all in case the forecast hasn't been updated
+        if (forecast === undefined) {
+            forecast = {
+                description: "Clear",
+                icon: "clear-day",
+                temp_low: "55°F",
+                temp_high: "55°F",
+                precip_probability: 0.2,
+                wind_speed: 10
+            };
+        }
+
         let weather_score = 5 - 5*(forecast.precip_probability + (forecast.wind_speed/100));
         let historical_score = round(5 * ((100 - item.delayed_pct)/100), 1);
         let overall_score = round((weather_score + historical_score) / 2, 1);
@@ -103,7 +116,7 @@ function round(value, precision) {
 // You can either tie into an existing Weather Forecast API 
 // or provide hard-coded lookups like the following.
 var forecasts = {
-    "ORD_2020-02-06": {
+    "ORD_2020-02-09": {
         description: "Snow",
         icon: "snow",
         temp_low: "28°F",
@@ -111,7 +124,7 @@ var forecasts = {
         precip_probability: 0.6,
         wind_speed: 15
     },
-    "LAX_2020-02-08": {
+    "LAX_2020-02-11": {
         description: "Clear",
         icon: "clear-day",
         temp_low: "56°F",

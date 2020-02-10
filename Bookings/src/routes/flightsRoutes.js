@@ -61,9 +61,16 @@ router.get("/", async (req, res, next) => {
                         t.dest = ?";
 
         var results = await conn.query(query, [month,day,origin,dest,year,month,day,month,day,origin,dest,date,origin,dest]);
-        var analyzedResults = analyzeResults(results);
-        res.send(analyzedResults);
+
+        if (results.length > 0) {
+            var analyzedResults = analyzeResults(results);
+            res.send(analyzedResults);
+        }
+        else {
+            res.send(results);
+        }
     } catch (err) {
+        console.log(err);
         throw err;
     } finally {
         if (conn) return conn.release();
