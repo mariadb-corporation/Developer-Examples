@@ -79,7 +79,7 @@ router.get("/", async (req, res, next) => {
 // secret (scoring) sauce
 function analyzeResults(items) {
     items.forEach(item => { 
-        let forecast = forecasts[item.origin + "_" + item.fl_date];
+        let forecast = forecasts[item.origin + "_" + item.fl_date.toISOString().substring(0, 10)];
         
         // Catch all in case the forecast hasn't been updated
         if (forecast === undefined) {
