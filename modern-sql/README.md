@@ -41,13 +41,13 @@ To download and deploy MariaDB check out the instructions [here](https://mariadb
 
 ### Create the schema <a name="create-schema"></a>
 
-Next you can create the schema necessary for this application by running
+Next execute the SQL within [create_schema_data.sql](create_schema_data.sql) within a new database. The script will create the following tables
 
-```
-$ /<path_to>/create_schema_data.sh
-```
+* supers
+* teams
+* supersteams
 
-or copying the SQL within [create_schema_data.sql](create_schema_data.sql) directly.
+and insert a small amount of sample data into them. From there you can add/remove your own data!
 
 ## Requirements <a name="requirements"></a>
 
