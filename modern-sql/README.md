@@ -103,9 +103,9 @@ Once you've downloaded and installed Apache Zeppelin you will need to add a new 
 
 Import the notes:
 
-* [demo_1.json](demo_1.json)
-* [demo_2.json](demo_2.json)
-* [demo_3.json](demo_3.json)
+* [demo_1.json](demo_1.json): Set operators, table value constructors, aggregation functions, and rollups. 
+* [demo_2.json](demo_2.json): Window functions and common table expressions (recursive).
+* [demo_3.json](demo_3.json): Temporal tables.
 
 by selecting "Import note".
 
