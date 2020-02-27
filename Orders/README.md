@@ -48,7 +48,7 @@ This sample was tested on macOS v.10.14.6.
 
 ### Getting start with MariaDB <a name="installation"></a>
 
-To download and deploy MariaDB HTAP check out the instructions [here](https://mariadb.com/docs/deploy/installation/). You can also make use of the [MariaDB Image available on Docker Hub](https://hub.docker.com/_/mariadb).
+To download and deploy MariaDB check out the instructions [here](https://mariadb.com/docs/deploy/installation/). You can also make use of the [MariaDB Image available on Docker Hub](https://hub.docker.com/_/mariadb).
 
 ### Create the schema <a name="create-schema"></a>
 
