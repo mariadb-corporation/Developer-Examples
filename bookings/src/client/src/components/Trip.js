@@ -129,7 +129,7 @@ export default class Trip extends Component {
                             </div>
                             <div className="float-left margin-left-10"> 
                                 <p>Precip: {trip.forecast.precip_probability}</p>
-                                <p>Wind: {trip.forecast.wind_speed}</p>
+                                <p>Wind: {trip.forecast.wind_speed} mph</p>
                             </div>
                             <div style={{clear: "both"}} />
                         </div>
