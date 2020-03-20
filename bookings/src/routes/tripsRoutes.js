@@ -21,10 +21,10 @@ router.get("/", async (req, res, next) => {
                         fh.delayed_pct, \
                         fh.avg_delay \
                     from \
-                        innodb_schema.trips tr inner join  \
-                        innodb_schema.tickets t on tr.ticket_id = t.id inner join \
-                        innodb_schema.airlines a on t.carrier = a.iata_code, \
-                        (select * from innodb_schema.flights where year >= 2020) f, \
+                        travel.trips tr inner join  \
+                        travel.tickets t on tr.ticket_id = t.id inner join \
+                        travel.airlines a on t.carrier = a.iata_code, \
+                        (select * from travel.flights where year >= 2020) f, \
                         (select  \
                             a.avg_delay, \
                             round(100 * (a.`delayed` / a.volume), 2) delayed_pct, \
@@ -42,11 +42,10 @@ router.get("/", async (req, res, next) => {
                                 month, \
                                 day \
                             from  \
-                                columnstore_schema.flights \
+                                travel_history.flights \
                             where \
-                                year >= 2014 and \
-                                month in (select month(fl_date) from innodb_schema.trips tr inner join innodb_schema.tickets t on tr.ticket_id = t.id) and \
-                                day in (select day(fl_date) from innodb_schema.trips tr inner join innodb_schema.tickets t on tr.ticket_id = t.id) \
+                                month in (select month(fl_date) from travel.trips tr inner join travel.tickets t on tr.ticket_id = t.id) and \
+                                day in (select day(fl_date) from travel.trips tr inner join travel.tickets t on tr.ticket_id = t.id) \
                             group by  \
                                 day, \
                                 month, \
@@ -122,7 +121,7 @@ function round(value, precision) {
 // You can either tie into an existing Weather Forecast API 
 // or provide hard-coded lookups like the following.
 var forecasts = {
-    "ORD_2020-02-27": {
+    "ORD_2020-03-27": {
         description: "Snow",
         icon: "snow",
         temp_low: "-2°C",
@@ -130,7 +129,7 @@ var forecasts = {
         precip_probability: .6,
         wind_speed: 15
     },
-    "LAX_2020-02-28": {
+    "LAX_2020-03-28": {
         description: "Clear",
         icon: "clear-day",
         temp_low: "13°C",

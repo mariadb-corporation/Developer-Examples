@@ -9,7 +9,7 @@ router.get("/", async (req, res, next) => {
     let conn;
     try {
         conn = await pool.getConnection();
-        var query = "select iata_code, airport from innodb_schema.airports group by airport, iata_code order by airport";
+        var query = "select iata_code, airport from travel.airports group by airport, iata_code order by airport";
         var rows = await conn.query(query);
         res.send(rows);
     } catch (err) {

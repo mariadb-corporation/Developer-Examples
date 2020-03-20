@@ -3,7 +3,7 @@ var mariadb = require('mariadb');
 require('dotenv').config();
 
 // For SSL connections
-//const serverCert = [fs.readFileSync("skysql_chain.pem", "utf8")];
+const serverCert = [fs.readFileSync("skysql_chain.pem", "utf8")];
 
 var pools = [
   mariadb.createPool({
@@ -13,20 +13,11 @@ var pools = [
     port: process.env.DB_PORT_1,
     database: process.env.DB_NAME_1,
     multipleStatements: true,
-    connectionLimit: 5
-  })/*,
-  mariadb.createPool({
-    host: '<host_address>', 
-    user:'<user>', 
-    password: '<password>',
-    database: 'orders',
-    port: 5002,
-    multipleStatements: true,
     connectionLimit: 5,
     ssl: {
       ca: serverCert
     }
-  })*/
+  })
 ];
 
 module.exports={

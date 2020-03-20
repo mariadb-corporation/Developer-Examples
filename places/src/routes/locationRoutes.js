@@ -16,7 +16,7 @@ router.get("/", async (req, res, next) => {
                     "then json_value(attr, '$.lastVisitDate') else 'N/A' end) " +
                     "when type = 'S' then concat((case when json_length(attr, '$.events') is not null " +
                     "then json_length(attr, '$.events') else 0 end), ' events') end as description " +
-                    "from Locations";
+                    "from locations";
         var rows = await conn.query(query);
         res.send(rows);
     } catch (err) {
@@ -32,7 +32,7 @@ router.post("/", async (req, res, next) => {
     let conn;
     try {
         conn = await pool.getConnection();
-        var query = "insert into Locations (name, description, type, latitude, longitude, attr) values (?, ?, ?, ?, ?, json_compact(?))";
+        var query = "insert into locations (name, description, type, latitude, longitude, attr) values (?, ?, ?, ?, ?, json_compact(?))";
         var result = await conn.query(query, [location.name, location.description, location.type, location.latitude, location.longitude, JSON.stringify(location.attr)]);
         res.send(result);
     } catch (err) {
@@ -54,7 +54,7 @@ router.get("/restaurant", async (req, res, next) => {
                     "json_value(attr,'$.details.foodType') as foodType, " +
                     "json_value(attr,'$.details.menu') as menu, " +
                     "json_query(attr,'$.favorites') as favorites " +
-                    "from Locations " +
+                    "from locations " +
                     "where id = ?";
         var rows = await conn.query(query, [id]);
         res.send(rows[0]);
@@ -72,7 +72,7 @@ router.post("/restaurant/favorites", async (req, res, next) => {
     let conn;
     try {
         conn = await pool.getConnection();
-        var query = "update Locations set attr = json_array_append(attr, '$.favorites', json_compact(?)) where id = ?"
+        var query = "update locations set attr = json_array_append(attr, '$.favorites', json_compact(?)) where id = ?"
         var result = await conn.query(query, [JSON.stringify(details), favorite.locationid]);
         res.send(result);
     } catch (err) {
@@ -94,7 +94,7 @@ router.get("/sportsvenue", async (req, res, next) => {
                     "json_value(attr,'$.details.yearOpened') as yearOpened, " +
                     "json_value(attr,'$.details.capacity') as capacity, " +
                     "json_query(attr,'$.events') as events " +
-                    "from Locations " +
+                    "from locations " +
                     "where id = ?";
         var rows = await conn.query(query, [id]);
         res.send(rows[0]);
@@ -111,7 +111,7 @@ router.post("/sportsvenue/event", async (req, res, next) => {
     let conn;
     try {
         conn = await pool.getConnection();
-        var query = "update Locations set attr = json_array_append(attr, '$.events', json_compact(?)) where id = ?";
+        var query = "update locations set attr = json_array_append(attr, '$.events', json_compact(?)) where id = ?";
         var result = await conn.query(query, [JSON.stringify(event.details), event.locationid]);
         res.send(result);
     } catch (err) {
@@ -128,7 +128,7 @@ router.put("/attractions", async (req, res, next) => {
     let conn;
     try {
         conn = await pool.getConnection();
-        var query = "update Locations set attr = json_set(attr,'$.lastVisitDate', ?) where id = ?";
+        var query = "update locations set attr = json_set(attr,'$.lastVisitDate', ?) where id = ?";
         var result = await conn.query(query, [lastVisitDate, locationId]);
         res.send(result);
     } catch (err) {

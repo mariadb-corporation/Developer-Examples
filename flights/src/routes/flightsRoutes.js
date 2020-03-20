@@ -29,7 +29,7 @@ router.get("/airlines_stats", async (req, res, next) => {
                         "select f.carrier, a.airline, count(*) volume, " +
                         "sum(case when dep_delay > 0 then 1 else 0 end) `delayed`, " +
                         "sum(diverted) diverted, sum(cancelled) cancelled " +
-                        "from flights f join airlines a on f.carrier = a.iata_code " +
+                        "from travel_history.flights f join travel.airlines a on f.carrier = a.iata_code " +
                         "where " +
                            "f.origin = ? and " +
                            "f.dest = ? and " +
@@ -86,7 +86,7 @@ router.get("/airline_delays", async (req, res, next) => {
                                 "avg(late_aircraft_delay) late_aircraft_delayed, " +
                                 "avg(weather_delay) weather_delayed " +
                             "from " + 
-                                "flights f join airlines a on f.carrier = a.iata_code " +
+                                "travel_history.flights f join travel.airlines a on f.carrier = a.iata_code " +
                             "where " + 
                                 "f.origin = ? and f.dest = ? and f.carrier = ? and f.year >= ? and f.year <= ?";
 
@@ -129,7 +129,7 @@ router.get("/delays_comparison", async (req, res, next) => {
                         "avg(late_aircraft_delay) late_aircraft, " +
                         "avg(weather_delay) weather " +
                     "from " + 
-                        "flights f " +
+                        "travel_history.flights f " +
                     "where " +
                         "f.origin = ? " +
                         "and f.dest = ? " +
@@ -151,7 +151,7 @@ router.get("/delays_comparison", async (req, res, next) => {
                         "avg(late_aircraft_delay) late_aircraft, " +
                         "avg(weather_delay) weather " +
                     "from " +
-                        "flights f " +
+                        "travel_history.flights f " +
                     "where " +
                         "f.origin = ? " +
                         "and f.dest = ? " +

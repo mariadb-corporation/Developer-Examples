@@ -9,7 +9,7 @@ router.get("/", async (req, res, next) => {
     let conn;
     try {
         conn = await pool.getConnection();
-        var query = "select * from innodb_schmema.airlines order by airline";
+        var query = "select * from travel.airlines order by airline";
         var rows = await conn.query(query);
         res.send(rows);
         throw err;
