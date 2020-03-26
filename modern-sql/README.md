@@ -106,6 +106,7 @@ Import the notes:
 * [demo_1.json](demo_1.json): Set operators, table value constructors, aggregation functions, and rollups. 
 * [demo_2.json](demo_2.json): Window functions and common table expressions (recursive).
 * [demo_3.json](demo_3.json): Temporal tables.
+* [bitemporal-table-demo](bitemporal-table-demo.json): A comprehensive look at a MariaDB Bitemporal table. 
 
 by selecting "Import note".
 
