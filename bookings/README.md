@@ -46,7 +46,7 @@ This sample was tested on macOS v.10.14.6.
 
 ### Introduction to MariaDB <a name="intro-mariadb"></a>
 
-[MariaDB platform](https://mariadb.com/products/mariadb-platform/) unifies [MariaDB TX (transactions)](https://mariadb.com/products/mariadb-platform-transactional/) and [MariaDB AX (analytics)](https://mariadb.com/products/mariadb-platform-analytical/) so transactional applications can retain unlimited historical data and leverage powerful, real-time analytics in order to provide data-driven customers with more information, actionable insight and greater value – and businesses with endless ways to monetize data. It is the enterprise open source database for hybrid transactional/analytical processing at scale.
+[MariaDB platform](https://mariadb.com/products/mariadb-platform/) unifies [transactional](https://mariadb.com/products/mariadb-platform-transactional/) and [analytical](https://mariadb.com/products/mariadb-platform-analytical/) information so applications can leverage powerful, real-time analytics in order to provide data-driven customers with more information, actionable insight and greater value.
 
 <p align="center">
     <kbd>
