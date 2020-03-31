@@ -1,7 +1,11 @@
-const fs = require("fs");
 var mariadb = require('mariadb');
 require('dotenv').config();
 
+// SSL (e.g. SkySQL) connections 
+// * Remember to change the location of "skysql_chain.pem" to wherever you placed it!
+// * To use just uncomment the two lines below and the 'ssl' property (and value)
+
+const fs = require("fs");
 const serverCert = [fs.readFileSync("skysql_chain.pem", "utf8")];
 
 const pool = mariadb.createPool({
