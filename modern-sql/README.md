@@ -1,3 +1,7 @@
+# Attention - Please Read!
+
+This application is no longer being maintained here. It has been moved to [**this repository**](https://github.com/mariadb-corporation/dev-example-modern-sql).
+
 # Modern SQL, MariaDB, and Apache Zeppelin!
 
 [MariaDB](http://www.mariadb.com) implements more of the standard SQL specification than any other open source database, adding support for [common table expressions (CTEs)](https://mariadb.com/kb/en/with/), [window functions](https://mariadb.com/kb/en/window-functions/), [temporal data tables](https://mariadb.com/kb/en/temporal-data-tables/) and many other features over the last few years. 
