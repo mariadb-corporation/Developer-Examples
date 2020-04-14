@@ -1,3 +1,9 @@
+
+# Attention - Please Read!
+
+This application is no longer being maintained here. It has been moved to [**this repository**](https://github.com/mariadb-corporation/dev-example-bookings).
+
+
 # Bookings
 
 **Bookings** is a web application written in [React.js](https://reactjs.org) and [Node.js](https://nodejs.org) that, backed by the power of the [MariaDB Node.js Connector](https://github.com/MariaDB/mariadb-connector-nodejs) and the [MariaDB X4 Platform](https://mariadb.com/resources/blog/deploying-mariadb-platform-x4/#smart), unleashes the power of [smart transactions](https://mariadb.com/resources/blog/introducing-mariadb-platform-x4-smart-transactions-and-cloud-native-storage/) on hundreds of millions of records with sub-second query performance without having to add any indexes!
