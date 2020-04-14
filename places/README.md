@@ -1,3 +1,7 @@
+# Attention - Please Read!
+
+This application is no longer being maintained here. It has been moved to [**this repository**](https://github.com/mariadb-corporation/dev-example-places).
+
 # Places
 
 **Places** is a web application written in [React.js](https://reactjs.org) and [Node.js](https://nodejs.org) that, backed by the power of the [MariaDB Node.js Connector](https://github.com/MariaDB/mariadb-connector-nodejs) and [MariaDB platform](https://mariadb.com/products/mariadb-platform/), allows you to record all of your favorite locations!
