@@ -1,7 +1,5 @@
 # Developer-Examples
 
-This repository contains samples applications demonstrating the power of MariaDB!
-
 ## [Bookings](https://github.com/mariadb-corporation/dev-example-bookings)
 **Bookings** is a web application that, backed by the power of MariaDB connectors and the [MariaDB X4 Platform](https://mariadb.com/resources/blog/deploying-mariadb-platform-x4/#smart), unleashes the power of [smart transactions](https://mariadb.com/resources/blog/introducing-mariadb-platform-x4-smart-transactions-and-cloud-native-storage/) on hundreds of millions of records with sub-second query performance without having to add any indexes!
 
