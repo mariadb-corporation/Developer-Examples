@@ -19,5 +19,8 @@ This repository contains samples applications demonstrating the power of MariaDB
 ## [Places](https://github.com/mariadb-corporation/dev-example-places)
 **Places** is a web application that, backed by the power of MariaDB connectors and [MariaDB platform](https://mariadb.com/products/mariadb-platform/), allows you to record all of your favorite locations!
 
+## [TODO](https://github.com/mariadb-corporation/dev-example-todo)
+**TODO** is a web application that that introduces you to the power, performance and simplicity of [MariaDB](https://mariadb.com/products/). Through the use of simple task management you'll learn how to interact with MariaDB databases and perform simple CRUD operations!
+
 ## Support and Contribution <a name="support-contribution"></a>
 If you have any questions, comments, or would like to contribute to this or future projects like this please reach out to us directly at developers@mariadb.com or on [Twitter](https://twitter.com/mariadb).
