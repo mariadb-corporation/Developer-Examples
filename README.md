@@ -36,5 +36,17 @@ This repository provides a variety of samples that utilize [MariaDB Connector/Py
 
 [MariaDB](http://www.mariadb.com) implements more of the standard SQL specification than any other open source database, adding support for [common table expressions (CTEs)](https://mariadb.com/kb/en/with/), [window functions](https://mariadb.com/kb/en/window-functions/), [temporal data tables](https://mariadb.com/kb/en/temporal-data-tables/) and many other features over the last few years. 
 
+### [Object-Relational Mapping Samples](https://github.com/mariadb-corporation/dev-example-orms)
+
+A collection of samples highlighting the usages of Object-Relational Mapping (ORM) tools.
+
+| App Language | Driver  | ORM       |
+|--------------|---------|-----------|
+| Node.js      | Node.js | Sequelize |
+| Java         | JDBC    |           |
+| Java         | R2DBC   |           |
+| Python       | Python  |           |
+
+
 ## Support and Contribution <a name="support-contribution"></a>
 If you have any questions, comments, or would like to contribute to this or future projects like this please reach out to us directly at developers@mariadb.com or on [Twitter](https://twitter.com/mariadb).
